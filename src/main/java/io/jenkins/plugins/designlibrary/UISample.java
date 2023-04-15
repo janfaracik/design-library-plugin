@@ -14,7 +14,7 @@ import java.util.List;
  */
 public abstract class UISample implements ExtensionPoint, Action, Describable<UISample> {
     public String getIconFileName() {
-        return "symbol-sample";
+        return "symbol-document-outline plugin-ionicons-api";
     }
 
     public String getUrlName() {
