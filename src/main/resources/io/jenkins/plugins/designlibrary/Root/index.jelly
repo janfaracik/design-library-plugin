@@ -2,7 +2,6 @@
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:l="/lib/layout" xmlns:s="/lib/samples">
   <l:layout title="Design Library">
     <st:adjunct includes="io.jenkins.plugins.designlibrary.styles" />
-    <st:adjunct includes="io.jenkins.plugins.designlibrary.search" />
 
     <l:side-panel>
       <s:sidepanel />
