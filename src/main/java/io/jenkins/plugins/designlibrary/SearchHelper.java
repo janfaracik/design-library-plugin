@@ -35,7 +35,7 @@ public class SearchHelper {
 				.map(sample -> {
 					SearchResult searchResult = new SearchResult();
 					searchResult.setIcon(IconSet.getSymbol(sample.getIconFileName().substring(7),
-							"", "", "", "design-library", ""));
+							"", "", "", "", "design-library", ""));
 					searchResult.setTitle(sample.getDisplayName());
 					searchResult.setUrl(Jenkins.get().getRootUrl() + "design-library/" + sample.getUrlName());
 					try {
