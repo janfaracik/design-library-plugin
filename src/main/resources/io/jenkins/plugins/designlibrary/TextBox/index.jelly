@@ -24,80 +24,72 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:f="/lib/form" xmlns:s="/lib/samples">
   <s:sample>
-    <div class="app-component-sample">
-      <f:entry title="Example" field="example">
-        <f:textbox />
-      </f:entry>
+    <div class="jdl-component-group">
+      <div class="jdl-component-sample">
+        <f:entry title="Example" field="example">
+          <f:textbox />
+        </f:entry>
+      </div>
+      <s:code language="xml" file="example.jelly" />
     </div>
-    <pre>
-      <code class="sample-remote language-xml" data-sample="example.jelly" />
-    </pre>
 
-    <h2>${%autoCompletion}</h2>
-    <p class="jenkins-description">${%autoCompletion.description.1}</p>
-    <div class="app-component-sample">
+    <h2 class="jdl-heading">${%autoCompletion}</h2>
+    <p class="jdl-paragraph">${%autoCompletion.description.1}</p>
+    <div class="jdl-component-sample">
       <f:entry title="U.S. State" field="state">
         <f:textbox />
       </f:entry>
     </div>
-    <p class="jenkins-description">${%autoCompletion.description.2}</p>
-    <pre>
-      <code class="sample-remote language-xml" data-sample="sample.jelly" />
-    </pre>
-    <pre>
-      <code class="sample-remote language-java" data-sample="Sample.java" />
-    </pre>
+    <p class="jdl-paragraph">${%autoCompletion.description.2}</p>
 
-    <p class="jenkins-description">${%combobox.description}</p>
+    <s:code language="xml" file="sample.jelly" />
+    <s:code language="java" file="Sample.java" />
 
-    <div class="app-component-sample">
-      <f:entry title="U.S. State" field="state">
-        <f:combobox />
-      </f:entry>
-    </div>
+    <p class="jdl-paragraph">${%combobox.description}</p>
+
+    <form>
+      <div class="jdl-component-sample">
+        <f:entry title="U.S. State" field="state">
+          <f:combobox />
+        </f:entry>
+      </div>
+    </form>
 
     <code>config.jelly:</code>
-    <pre>
-      <code class="sample-remote language-xml" data-sample="combo-box.jelly"/>
-    </pre>
+    <s:code language="xml" file="combo-box.jelly" />
 
     <code>SimpleCombobox.java:</code>
-    <pre>
-      <code class="sample-remote language-java" data-sample="SimpleCombobox.java"/>
-    </pre>
+    <s:code language="java" file="SimpleCombobox.java" />
 
     <h3>${%dynamicCombobox}</h3>
-    <p class="jenkins-description">${%dynamicCombobox.description}</p>
+    <p class="jdl-paragraph">${%dynamicCombobox.description}</p>
 
-    <f:entry title="Beatles Album" field="album">
-      <f:select />
-    </f:entry>
-    <f:entry title="Title" field="title">
-      <f:combobox />
-    </f:entry>
+    <form>
+      <f:entry title="Beatles Album" field="album">
+        <f:select />
+      </f:entry>
+      <f:entry title="Title" field="title">
+        <f:combobox />
+      </f:entry>
+    </form>
 
     <code>config.jelly:</code>
-    <pre>
-      <code class="sample-remote language-xml" data-sample="dynamic-combo-box.jelly"/>
-    </pre>
+    <s:code language="xml" file="dynamic-combo-box.jelly" />
 
     <code>DynamicCombobox.java:</code>
-    <pre>
-      <code class="sample-remote language-java" data-sample="DynamicCombobox.java"/>
-    </pre>
+    <s:code language="java" file="DynamicCombobox.java" />
 
+    <h2 class="jdl-heading">${%syntaxHighlight}</h2>
 
-    <h2>${%syntaxHighlight}</h2>
-
-    <p class="jenkins-description">${%syntaxHighlight.description.1}</p>
+    <div>
+      <p class="jdl-paragraph">${%syntaxHighlight.description.1}</p>
+    </div>
 
     <textarea class="script">println "Hello, World!"</textarea>
 
-    <pre>
-      <code class="language-html"><textarea class="script">println "Hello, World!"</textarea></code>
-    </pre>
+    <s:code language="xml" file="codemirror.jelly" />
 
-    <p class="jenkins-description">${%syntaxHighlight.description.2}</p>
+    <p class="jdl-paragraph">${%syntaxHighlight.description.2}</p>
 
     <st:adjunct includes="org.kohsuke.stapler.codemirror.mode.groovy.groovy"/>
     <st:adjunct includes="org.kohsuke.stapler.codemirror.theme.default"/>

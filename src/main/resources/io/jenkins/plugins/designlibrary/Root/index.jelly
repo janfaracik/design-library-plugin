@@ -1,19 +1,18 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:l="/lib/layout" xmlns:s="/lib/samples">
   <l:layout title="Design Library">
-    <st:adjunct includes="io.jenkins.plugins.designlibrary.sample" />
+    <st:adjunct includes="io.jenkins.plugins.designlibrary.styles" />
     <l:side-panel>
       <s:sidepanel />
     </l:side-panel>
 
     <l:main-panel>
       <div class="app-home">
-        <p class="app-home__jenkins-title">Jenkins</p>
-        <h1 class="app-home__heading">${%title}</h1>
         <div class="app-card__container">
-          <div class="app-card__preview app-card__preview--intro">
-            <l:icon src="symbol-sunburst plugin-design-library" />
-            <img src="${imagesURL}/svgs/logo.svg" alt="Jenkins illustration" />
+          <div class="app-card__preview">
+            <div class="app-card__preview__introduction">
+              <img src="${imagesURL}/svgs/logo.svg" alt="${%Jenkins illustration}" />
+            </div>
           </div>
           <p class="app-card__title">${%welcome}</p>
           <p class="app-card__description">${%description}</p>
@@ -29,7 +28,7 @@
           </a>
           <a class="app-card__container" href="Symbols">
             <div class="app-card__preview">
-              <l:icon src="symbol-symbols plugin-design-library" />
+              <l:icon src="symbol-star-outline plugin-ionicons-api" />
             </div>
             <div class="app-card__title">${%symbols}</div>
             <div class="app-card__description">${%symbols-description}</div>
@@ -45,7 +44,7 @@
           </a>
           <a class="app-card__container" href="https://www.youtube.com/playlist?list=PLN7ajX_VdyaOnsIIsZHsv_fM9QhOcajWe">
             <div class="app-card__preview">
-              <l:icon src="symbol-youtube plugin-design-library" />
+              <l:icon src="symbol-logo-youtube plugin-ionicons-api" />
             </div>
             <div class="app-card__title">${%ux-youtube}</div>
           </a>
@@ -53,7 +52,7 @@
         <div class="app-home__side-by-side">
           <a class="app-card__container" href="https://github.com/jenkinsci/jenkins/pulls?q=is%3Apr+is%3Aopen+label%3Aweb-ui">
             <div class="app-card__preview">
-              <l:icon src="symbol-github plugin-design-library" />
+              <l:icon src="symbol-logo-github plugin-ionicons-api" />
             </div>
             <div class="app-card__title">${%ux-wip-core}</div>
           </a>

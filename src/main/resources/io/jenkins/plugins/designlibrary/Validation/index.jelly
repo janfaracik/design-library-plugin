@@ -1,7 +1,7 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:f="/lib/form">
   <s:sample>
-    <p class="jenkins-description">${%title}</p>
+    <p class="jdl-paragraph">${%title}</p>
 
     <form method="post">
       <f:entry title="${%States}">
@@ -9,13 +9,10 @@
       </f:entry>
     </form>
 
-    <p class="jenkins-description">${%validation.description}</p>
-    <pre>
-      <code class="sample-remote language-xml" data-sample="sample.jelly"/>
-    </pre>
-    <pre>
-      <code class="sample-remote language-java" data-sample="Sample.java"/>
-    </pre>
+    <p class="jdl-paragraph">${%validation.description}</p>
+    <s:code language="xml" file="sample.jelly" />
+
+    <s:code language="java" file="Sample.java" />
 
   </s:sample>
 </j:jelly>
