@@ -4,6 +4,9 @@ import hudson.Extension;
 import hudson.model.RootAction;
 
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Entry point to all the UI samples.
@@ -31,6 +34,19 @@ public class Root implements RootAction {
                 return ui;
         }
         return null;
+    }
+
+    public Map<PageCategory, List<UISample>> getCategorized() {
+        return getAll().stream()
+                .collect(
+                        Collectors.groupingBy(
+                                UISample::getCategory,
+                                Collectors.mapping(
+                                        Function.identity(),
+                                        Collectors.toList()
+                                )
+                        )
+                );
     }
 
     public List<UISample> getAll() {

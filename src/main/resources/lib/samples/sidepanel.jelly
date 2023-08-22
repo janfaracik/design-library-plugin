@@ -7,10 +7,20 @@
   <l:tasks>
     <l:search-bar placeholder="${%Search Design Library}" id="design-library-search-bar" />
 
-    <l:task title="${%Home}" href="${rootURL}/design-library" icon="symbol-home-outline plugin-ionicons-api" />
+    <l:task title="${%Welcome}" href="${rootURL}/design-library" icon="symbol-design-library plugin-design-library" />
 
-    <j:forEach var="s" items="${it.all}">
-      <l:task title="${s.displayName}" href="${rootURL}/design-library/${s.urlName}" icon="${s.iconFileName} plugin-design-library" />
+    <j:forEach var="item" items="${it.categorized.entrySet()}">
+      <button class="sidebartitle" data-expanded-state="open">
+        ${item.key.displayName}
+        <l:icon src="symbol-chevron-down-outline plugin-ionicons-api" />
+      </button>
+      <div class="sidebargroup" data-expanded-state="open">
+        <div class="sidebargroupinner">
+          <j:forEach var="s" items="${item.value}">
+            <l:task title="${s.displayName}" href="${rootURL}/design-library/${s.urlName}" icon="${s.iconFileName} plugin-design-library" />
+          </j:forEach>
+        </div>
+      </div>
     </j:forEach>
   </l:tasks>
 

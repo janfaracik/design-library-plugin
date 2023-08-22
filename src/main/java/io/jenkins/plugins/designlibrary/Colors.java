@@ -46,6 +46,11 @@ public class Colors extends UISample {
         return completeList;
     }
 
+    @Override
+    public PageCategory getCategory() {
+        return PageCategory.PATTERN;
+    }
+
     @Extension
     public static final class DescriptorImpl extends UISampleDescriptor {
     }

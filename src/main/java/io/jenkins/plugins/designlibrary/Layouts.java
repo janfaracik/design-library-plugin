@@ -14,6 +14,11 @@ public class Layouts extends UISample {
         return "symbol-layouts";
     }
 
+    @Override
+    public PageCategory getCategory() {
+        return PageCategory.PATTERN;
+    }
+
     @Extension
     public static final class DescriptorImpl extends UISampleDescriptor {
     }

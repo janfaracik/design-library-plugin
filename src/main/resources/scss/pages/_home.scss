@@ -21,7 +21,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 2rem;
+  grid-gap: 2rem 1rem;
   overflow: hidden;
 
   @media (max-width: 970px) {
@@ -125,35 +125,37 @@
 }
 
 .app-card__preview {
-  &::before {
-    background-image: radial-gradient(
-                    at 40% 20%,
-                    var(--orange) 0,
-                    transparent 50%
-    ),
-    radial-gradient(at 80% 0%, var(--cyan) 0, transparent 50%),
-    radial-gradient(at 0% 50%, var(--light-pink) 0, transparent 50%),
-    radial-gradient(at 80% 50%, var(--light-red) 0, transparent 50%),
-    radial-gradient(at 0% 100%, var(--light-yellow) 0, transparent 50%),
-    radial-gradient(at 80% 100%, var(--dark-purple) 0, transparent 50%),
-    radial-gradient(at 0% 0%, var(--pink) 0, transparent 50%);
-    animation: aurora-one 5s linear infinite;
-  }
+  background: blue;
 
-  &::after {
-    background-image: radial-gradient(
-                    at 40% 20%,
-                    var(--light-cyan) 0,
-                    transparent 50%
-    ),
-    radial-gradient(at 80% 0%, var(--dark-orange) 0, transparent 50%),
-    radial-gradient(at 0% 50%, var(--light-blue) 0, transparent 50%),
-    radial-gradient(at 80% 50%, var(--light-green) 0, transparent 50%),
-    radial-gradient(at 0% 100%, var(--light-red) 0, transparent 50%),
-    radial-gradient(at 80% 100%, var(--light-yellow) 0, transparent 50%),
-    radial-gradient(at 0% 0%, var(--cyan) 0, transparent 50%);
-    animation: aurora-two 8s linear infinite;
-  }
+  //&::before {
+  //  background-image: radial-gradient(
+  //                  at 40% 20%,
+  //                  var(--orange) 0,
+  //                  transparent 50%
+  //  ),
+  //  radial-gradient(at 80% 0%, var(--cyan) 0, transparent 50%),
+  //  radial-gradient(at 0% 50%, var(--light-pink) 0, transparent 50%),
+  //  radial-gradient(at 80% 50%, var(--light-red) 0, transparent 50%),
+  //  radial-gradient(at 0% 100%, var(--light-yellow) 0, transparent 50%),
+  //  radial-gradient(at 80% 100%, var(--dark-purple) 0, transparent 50%),
+  //  radial-gradient(at 0% 0%, var(--pink) 0, transparent 50%);
+  //  animation: aurora-one 5s linear infinite;
+  //}
+  //
+  //&::after {
+  //  background-image: radial-gradient(
+  //                  at 40% 20%,
+  //                  var(--light-cyan) 0,
+  //                  transparent 50%
+  //  ),
+  //  radial-gradient(at 80% 0%, var(--dark-orange) 0, transparent 50%),
+  //  radial-gradient(at 0% 50%, var(--light-blue) 0, transparent 50%),
+  //  radial-gradient(at 80% 50%, var(--light-green) 0, transparent 50%),
+  //  radial-gradient(at 0% 100%, var(--light-red) 0, transparent 50%),
+  //  radial-gradient(at 80% 100%, var(--light-yellow) 0, transparent 50%),
+  //  radial-gradient(at 0% 0%, var(--cyan) 0, transparent 50%);
+  //  animation: aurora-two 8s linear infinite;
+  //}
 }
 
 @keyframes aurora-one {
@@ -190,4 +192,11 @@
   @include mixins.base-text;
   margin: 0;
   color: var(--text-color-secondary);
+}
+
+.sidebartitle {
+}
+
+* {
+  -webkit-font-smoothing: subpixel-antialiased;
 }

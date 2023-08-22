@@ -9,6 +9,11 @@ public class Conventions extends UISample {
         return "symbol-school-outline plugin-ionicons-api";
     }
 
+    @Override
+    public PageCategory getCategory() {
+        return PageCategory.PATTERN;
+    }
+
     @Extension
     public static final class DescriptorImpl extends UISampleDescriptor {
     }

@@ -18,6 +18,11 @@ public class JavaScriptProxy extends UISample {
         return "JavaScript Proxy";
     }
 
+    @Override
+    public PageCategory getCategory() {
+        return PageCategory.PATTERN;
+    }
+
     /**
      * The annotation exposes this method to JavaScript proxy.
      */
