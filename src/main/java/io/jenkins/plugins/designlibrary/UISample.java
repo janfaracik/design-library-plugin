@@ -46,6 +46,17 @@ public abstract class UISample implements ExtensionPoint, Action, Describable<UI
         return new ArrayList<>(Jenkins.get().getExtensionList(UISample.class));
     }
 
+    public UISample getDynamic(String name) {
+        System.out.println("Name 2 is");
+        System.out.println(name);
+        for (UISample ui : getAll()) {
+            String urlName = ui.getUrlName();
+            if (urlName != null && urlName.equals(name))
+                return ui;
+        }
+        return null;
+    }
+
     public UISample getPreviousPage() {
         try {
             return getAll().get(getAll().indexOf(this) - 1);

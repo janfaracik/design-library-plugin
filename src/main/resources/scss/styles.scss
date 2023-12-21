@@ -1,3 +1,14 @@
 @use "abstracts";
 @use "components";
 @use "pages";
+
+.sidebar {
+  width: 100px;
+  background: red;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    white-space: nowrap;
+  }
+}
