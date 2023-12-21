@@ -11,6 +11,7 @@ import org.kohsuke.stapler.StaplerResponse;
  */
 @Extension
 public class Links extends UISample implements ModelObjectWithContextMenu, ModelObjectWithChildren {
+
     @Override
     public String getIconFileName() {
         return "symbol-at-outline plugin-ionicons-api";
@@ -43,10 +44,6 @@ public class Links extends UISample implements ModelObjectWithContextMenu, Model
                 .add("https://yahoo.com/","Yahoo")
                 .add("https://google.com/","Google")
                 .add("https://microsoft.com/","Microsoft");
-    }
-
-    @Extension
-    public static final class DescriptorImpl extends UISampleDescriptor {
     }
 }
 

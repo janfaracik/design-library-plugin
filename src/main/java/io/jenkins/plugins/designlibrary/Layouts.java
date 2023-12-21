@@ -5,6 +5,7 @@ import jenkins.management.Badge;
 
 @Extension
 public class Layouts extends UISample {
+
     @Override
     public String getDisplayName() {
         return "Layouts";

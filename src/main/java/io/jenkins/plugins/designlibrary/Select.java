@@ -6,15 +6,15 @@ import hudson.ExtensionPoint;
 import hudson.model.Describable;
 import hudson.model.Descriptor;
 import hudson.util.ListBoxModel;
-import jenkins.model.Jenkins;
 import hudson.util.XStream2;
-import java.io.IOException;
-import javax.servlet.ServletException;
-
+import jenkins.model.Jenkins;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.QueryParameter;
 import org.kohsuke.stapler.StaplerRequest;
 import org.kohsuke.stapler.StaplerResponse;
+
+import javax.servlet.ServletException;
+import java.io.IOException;
 
 import static java.util.Arrays.asList;
 
@@ -23,6 +23,7 @@ import static java.util.Arrays.asList;
  */
 @Extension
 public class Select extends UISample {
+
     @Override
     public String getIconFileName() {
         return "symbol-select";

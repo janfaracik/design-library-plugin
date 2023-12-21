@@ -30,8 +30,4 @@ public class JavaScriptProxy extends UISample {
     public int increment(int n) {
         return i += n;
     }
-
-    @Extension
-    public static final class DescriptorImpl extends UISampleDescriptor {
-    }
 }

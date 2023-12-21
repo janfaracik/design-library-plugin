@@ -19,6 +19,7 @@ import java.util.List;
  */
 @Extension
 public class Validation extends UISample {
+
     @Override
     public String getIconFileName() {
         return "symbol-checkmark-circle-outline plugin-ionicons-api";
@@ -116,9 +117,5 @@ public class Validation extends UISample {
                 return FormValidation.warning("City name doesn't contain "+name);
             }
         }
-    }
-
-    @Extension
-    public static class DescriptorImpl extends UISampleDescriptor {
     }
 }

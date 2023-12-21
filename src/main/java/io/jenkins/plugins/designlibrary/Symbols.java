@@ -8,6 +8,7 @@ import java.util.Stack;
 
 @Extension
 public class Symbols extends UISample {
+
 	@Override
 	public String getIconFileName() {
 		return "symbol-star-outline plugin-ionicons-api";
@@ -37,10 +38,6 @@ public class Symbols extends UISample {
 				"key"));
 		Collections.shuffle(symbols);
 		return symbols;
-	}
-
-	@Extension
-	public static final class DescriptorImpl extends UISampleDescriptor {
 	}
 }
 

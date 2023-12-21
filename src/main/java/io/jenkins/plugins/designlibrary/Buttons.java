@@ -7,6 +7,7 @@ import hudson.Extension;
  */
 @Extension
 public class Buttons extends UISample {
+
     @Override
     public String getIconFileName() {
         return "symbol-buttons";

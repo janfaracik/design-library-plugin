@@ -14,6 +14,7 @@ import java.util.List;
  */
 @Extension
 public class Progress extends UISample {
+
     @Override
     public String getIconFileName() {
         return "symbol-hourglass-outline plugin-ionicons-api";
@@ -54,10 +55,6 @@ public class Progress extends UISample {
                 return new JSONObject().accumulate("newfactors", r);
             }
         };
-    }
-
-    @Extension
-    public static final class DescriptorImpl extends UISampleDescriptor {
     }
 }
 

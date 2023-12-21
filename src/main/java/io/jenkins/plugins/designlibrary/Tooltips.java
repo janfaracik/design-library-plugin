@@ -28,12 +28,9 @@ import hudson.Extension;
 
 @Extension
 public class Tooltips extends UISample {
+
 	@Override
 	public String getIconFileName() {
 		return "symbol-tooltips";
-	}
-
-	@Extension
-	public static final class DescriptorImpl extends UISampleDescriptor {
 	}
 }

@@ -7,13 +7,10 @@ import hudson.Extension;
  */
 @Extension
 public class Table extends UISample {
+
     @Override
     public String getIconFileName() {
         return "symbol-table";
-    }
-
-    @Extension
-    public static final class DescriptorImpl extends UISampleDescriptor {
     }
 }
 

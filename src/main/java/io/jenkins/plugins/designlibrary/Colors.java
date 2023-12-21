@@ -7,6 +7,7 @@ import java.util.List;
 
 @Extension
 public class Colors extends UISample {
+
     @Override
     public String getIconFileName() {
         return "symbol-water-outline plugins-ionicons-api";
@@ -44,10 +45,6 @@ public class Colors extends UISample {
             completeList.add(new Color("Dark " + color.name, "dark-" + color.className));
         });
         return completeList;
-    }
-
-    @Extension
-    public static final class DescriptorImpl extends UISampleDescriptor {
     }
 
     public static final class Semantic {

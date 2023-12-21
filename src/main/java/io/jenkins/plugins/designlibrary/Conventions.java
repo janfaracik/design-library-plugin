@@ -4,6 +4,7 @@ import hudson.Extension;
 
 @Extension
 public class Conventions extends UISample {
+
     @Override
     public String getIconFileName() {
         return "symbol-school-outline plugin-ionicons-api";
