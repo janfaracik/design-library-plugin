@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:f="/lib/form">
-  <s:sample>
+
     <p class="jdl-paragraph">${%parameters}</p>
     <ul class="jdl-list">
       <li>field - ${%parameters.field}</li>
@@ -46,5 +46,5 @@ THE SOFTWARE.
       </div>
       <s:code language="xml" file="file-accept.jelly" />
     </div>
-  </s:sample>
+
 </j:jelly>

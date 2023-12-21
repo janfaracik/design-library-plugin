@@ -23,7 +23,7 @@ THE SOFTWARE.
 -->
 
 <?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:l="/lib/layout" xmlns:d="jelly:define">
+<j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:l="/lib/layout" xmlns:d="jelly:define" xmlns:local="local">
   <d:taglib uri="local">
     <d:tag name="item">
       <li>
@@ -52,7 +52,6 @@ THE SOFTWARE.
     </d:tag>
   </d:taglib>
 
-  <s:sample xmlns:local="local">
     <p class="jdl-leading-paragraph jdl-important-point">${%tip-first}</p>
     <p class="jdl-leading-paragraph jdl-important-point">${%tip-second}</p>
     <p class="jdl-leading-paragraph jdl-important-point">${%tip-third}</p>
@@ -71,5 +70,5 @@ THE SOFTWARE.
         <local:item item="${item}" />
       </j:forEach>
     </ol>
-  </s:sample>
+
 </j:jelly>

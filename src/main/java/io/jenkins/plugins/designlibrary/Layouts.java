@@ -19,8 +19,9 @@ public class Layouts extends UISample {
         return new Badge("123", "A tooltip describing the badge", Badge.Severity.INFO);
     }
 
-    @Extension
-    public static final class DescriptorImpl extends UISampleDescriptor {
+    @Override
+    public Class<? extends Category> getCategory() {
+        return Patterns.class;
     }
 }
 

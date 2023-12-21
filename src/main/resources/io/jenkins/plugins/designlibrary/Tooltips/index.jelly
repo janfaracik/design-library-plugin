@@ -1,6 +1,6 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:l="/lib/layout">
-  <s:sample>
+
     <div class="jdl-component-group">
       <div class="jdl-component-sample">
         <button tooltip="I am a tooltip" class="jenkins-button jenkins-button--primary">
@@ -32,6 +32,6 @@
       <s:code language="xml" file="symbol-tooltip.jelly" />
     </div>
     <p class="jdl-leading-paragraph jdl-important-point">${%warning}</p>
-  </s:sample>
+
 </j:jelly>
 

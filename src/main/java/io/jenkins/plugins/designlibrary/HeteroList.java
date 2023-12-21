@@ -43,7 +43,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Extension public final class HeteroList extends UISample {
+@Extension
+public final class HeteroList extends UISample {
 
     @Extension public static final class DescriptorImpl extends UISampleDescriptor {}
 
@@ -58,6 +59,11 @@ import java.util.List;
         if (xml.exists()) {
             xml.unmarshal(this);
         }
+    }
+
+    @Override
+    public String getIconFileName() {
+        return "symbol-close";
     }
 
     @Override

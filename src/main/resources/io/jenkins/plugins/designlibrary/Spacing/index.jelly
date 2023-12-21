@@ -1,6 +1,6 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples">
-  <s:sample>
+
     <h2 class="jdl-heading">${%title}</h2>
 
     <p class="jdl-paragraph">${%description.1}</p>
@@ -30,5 +30,5 @@
         <p class="jdl-paragraph">jenkins-!-padding-5</p>
       </div>
     </div>
-  </s:sample>
+
 </j:jelly>

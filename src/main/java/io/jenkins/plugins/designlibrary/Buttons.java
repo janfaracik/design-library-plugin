@@ -12,8 +12,9 @@ public class Buttons extends UISample {
         return "symbol-buttons";
     }
 
-    @Extension
-    public static final class DescriptorImpl extends UISampleDescriptor {
+    @Override
+    public Class<? extends Category> getCategory() {
+        return Patterns.class;
     }
 }
 

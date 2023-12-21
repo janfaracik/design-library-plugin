@@ -4,11 +4,34 @@
 
 .sidebar {
   width: 100px;
-  background: red;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
 
   h1 {
     white-space: nowrap;
+  }
+
+  #tasks {
+    margin: 0 !important;
+  }
+
+  .task {
+    margin: 0 !important;
+  }
+
+  .task-link {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px !important;
+    padding: 10px;
+    margin: 0 !important;
+    gap: 0.4rem !important;
+
+    &::before, &::after {
+      inset: 0 !important;
+      left: 0 !important;
+    }
   }
 }

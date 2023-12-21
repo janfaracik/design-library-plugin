@@ -25,7 +25,6 @@ THE SOFTWARE.
 
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:l="/lib/layout">
-    <s:sample title="Hetero List Sample">
       <p class="jdl-paragraph">
         <!-- TODO I have no idea what heterogeneous means, should use a simpler word -->
         ${%description}
@@ -59,5 +58,5 @@ THE SOFTWARE.
               </code>
             </pre>
         </j:if>
-    </s:sample>
+
 </j:jelly>

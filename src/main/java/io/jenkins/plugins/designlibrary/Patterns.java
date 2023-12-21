@@ -19,8 +19,4 @@ public class Patterns extends Category {
     public String getUrl() {
         return "patterns";
     }
-
-    @Extension
-    public static final class DescriptorImpl extends CategoryDescriptor {
-    }
 }

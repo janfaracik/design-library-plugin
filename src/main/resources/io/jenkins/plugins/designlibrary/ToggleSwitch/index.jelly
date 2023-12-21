@@ -1,6 +1,6 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:f="/lib/form">
-  <s:sample>
+
     <div class="jdl-component-group">
       <div class="jdl-component-sample">
         <f:toggleSwitch name="enabled" title="Hello world" />
@@ -30,5 +30,5 @@
       </div>
       <s:code language="xml" file="dynamic.jelly" />
     </div>
-  </s:sample>
+
 </j:jelly>

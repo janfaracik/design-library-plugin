@@ -27,8 +27,16 @@ public class Root implements RootAction, ModelObject {
         return "design-library";
     }
 
+    public void doIndex(StaplerRequest request, StaplerResponse response) throws ServletException, IOException {
+        doDynamic(request, response);
+    }
+
     public void doDynamic(StaplerRequest request, StaplerResponse response) throws IOException, ServletException {
-        String[] paths = request.getRestOfPath().substring(1).split("/");
+        String path = request.getRestOfPath().replaceFirst("/", "");
+        String[] paths = new String[] {};
+        if (!path.isEmpty()) {
+            paths = path.split("/");
+        }
 
         Category category;
         UISample uiSample;
@@ -44,17 +52,15 @@ public class Root implements RootAction, ModelObject {
                 break;
             case 2:
                 category = DesignLibrary.getInstance().getCategory(paths[0]);
-                uiSample = category.getDynamic(paths[1]);
+                uiSample = category.getCategory(paths[1]);
                 break;
             default:
                 throw new RuntimeException("Page not found");
         }
 
+        request.setAttribute("category", category);
+        request.setAttribute("sample", uiSample);
         request.getView(this, "index.jelly").forward(request, response);
-    }
-
-    public List<UISample> getAll() {
-        return UISample.getAll();
     }
 
     public List<Category> getCategories() {

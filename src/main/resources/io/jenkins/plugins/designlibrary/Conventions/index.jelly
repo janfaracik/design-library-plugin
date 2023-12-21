@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples">
-  <s:sample>
+
     <h2 class="jdl-heading">Stylesheets (CSS/SCSS)</h2>
 
     <h3 class="jdl-heading">Naming</h3>
@@ -80,5 +80,5 @@ THE SOFTWARE.
     <p class="jdl-paragraph">
       A simple way to come up with a prefix for your plugin is to abbreviate your plugin name, e.g. Jenkins Design Library becomes <code class="jdl-inline-code">jdl-</code>.
     </p>
-  </s:sample>
+
 </j:jelly>

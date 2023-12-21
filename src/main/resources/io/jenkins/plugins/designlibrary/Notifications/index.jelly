@@ -1,6 +1,6 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:l="/lib/layout" >
-  <s:sample>
+
     <p class="jdl-leading-paragraph">${%description}</p>
 
     <div class="jdl-component-sample">
@@ -61,5 +61,5 @@
             executable="true" />
 
     <script src="${resURL}/jsbundles/section-to-tabs.js" type="text/javascript" />
-  </s:sample>
+
 </j:jelly>

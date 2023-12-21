@@ -1,12 +1,13 @@
 package io.jenkins.plugins.designlibrary;
 
 import hudson.ExtensionPoint;
-import hudson.model.Describable;
 import jenkins.model.Jenkins;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public abstract class Category implements ExtensionPoint, Describable<Category> {
+public abstract class Category implements ExtensionPoint {
 
     public abstract String getIcon();
 
@@ -15,21 +16,15 @@ public abstract class Category implements ExtensionPoint, Describable<Category> 
     public abstract String getUrl();
 
     public List<UISample> getItems() {
-        return List.of(
-                new Buttons()
-        );
+        return new ArrayList<>(Jenkins.get().getExtensionList(UISample.class)).stream()
+                .filter(e -> e.getCategory().equals(this.getClass()))
+                .collect(Collectors.toList());
     }
 
-    public UISample getDynamic(String url) {
-        System.out.println("Name 3 is");
-        System.out.println(url);
+    public UISample getCategory(String url) {
         return getItems().stream()
                 .filter(e -> e.getUrlName().equals(url))
                 .findFirst()
                 .orElseThrow();
-    }
-
-    public CategoryDescriptor getDescriptor() {
-        return (CategoryDescriptor) Jenkins.get().getDescriptorOrDie(getClass());
     }
 }

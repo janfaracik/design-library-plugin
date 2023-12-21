@@ -23,7 +23,6 @@
   -->
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:f="/lib/form" xmlns:s="/lib/samples">
-  <s:sample title="Input Fields">
     <p class="jdl-paragraph">${%inputs}</p>
     <h2>${%Textbox}</h2>
     <div class="jdl-component-group">
@@ -131,6 +130,6 @@
     <s:code language="xml" file="codemirror-html.jelly" />
 
     <st:adjunct includes="org.kohsuke.stapler.codemirror.mode.groovy.groovy"/>
-  </s:sample>
+
 </j:jelly>
 

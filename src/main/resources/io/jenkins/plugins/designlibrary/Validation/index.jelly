@@ -1,6 +1,6 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:f="/lib/form">
-  <s:sample>
+
     <p class="jdl-paragraph">${%title}</p>
 
     <form method="post">
@@ -14,5 +14,5 @@
 
     <s:code language="java" file="Sample.java" />
 
-  </s:sample>
+
 </j:jelly>

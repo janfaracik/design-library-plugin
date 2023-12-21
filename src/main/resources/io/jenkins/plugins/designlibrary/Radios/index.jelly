@@ -24,7 +24,7 @@ THE SOFTWARE.
 
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form" xmlns:s="/lib/samples" xmlns:l="/lib/layout">
-  <s:sample>
+
     <h2 class="jdl-heading">Descriptor radio list</h2>
 
     <div class="jdl-component-sample jdl-component-sample--gridless jenkins-!-padding-bottom-0">
@@ -51,5 +51,5 @@ THE SOFTWARE.
       </div>
       <s:code language="xml" file="booleanRadio.jelly" />
     </div>
-  </s:sample>
+
 </j:jelly>

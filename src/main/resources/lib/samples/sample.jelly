@@ -35,12 +35,6 @@ THE SOFTWARE.
     </st:attribute>
   </st:documentation>
 
-  <j:set var="instance" value="${it}" />
-  <j:set var="descriptor" value="${it.descriptor}" />
-
-  <j:set var="category" value="${it.parent}" />
-  <j:set var="item" value="${it}" />
-
   <!-- Default to class display name if title isn't set -->
   <j:if test="${title == null}">
     <j:set var="title" value="${it.displayName}" />
@@ -52,7 +46,6 @@ THE SOFTWARE.
     <st:adjunct includes="io.jenkins.plugins.designlibrary.styles" />
     <st:adjunct includes="io.jenkins.plugins.designlibrary.sample" />
     <st:adjunct includes="io.jenkins.plugins.designlibrary.preCode" />
-
     <st:adjunct includes="io.jenkins.plugins.designlibrary.styles" />
 
     <j:if test="${mode == 'side-panel'}">
@@ -91,7 +84,7 @@ THE SOFTWARE.
         </button>
       </l:app-bar>
 
-      <d:invokeBody/>
+      <d:invokeBody />
 
       <j:if test="${!attrs.hidePageControls}">
         <div class="jdl-previous-next-controls">
