@@ -44,4 +44,9 @@ a {
   .app-page-body__side-panel {
     max-width: 300px;
   }
+
+  .app-page-body__main-panel {
+    padding-left: calc(var(--section-padding) * 1.5);
+    padding-right: calc(var(--section-padding) * 1.5);
+  }
 }

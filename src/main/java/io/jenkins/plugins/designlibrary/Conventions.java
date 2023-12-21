@@ -6,7 +6,7 @@ import hudson.Extension;
 public class Conventions extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-school-outline plugin-ionicons-api";
     }
 

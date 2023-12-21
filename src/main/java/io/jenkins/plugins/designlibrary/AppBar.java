@@ -11,7 +11,7 @@ public class AppBar extends UISample {
     }
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-app-bar";
     }
 }

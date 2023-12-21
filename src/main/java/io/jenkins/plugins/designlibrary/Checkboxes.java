@@ -9,7 +9,7 @@ import hudson.Extension;
 public class Checkboxes extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-checkbox-outline plugin-ionicons-api";
     }
 }

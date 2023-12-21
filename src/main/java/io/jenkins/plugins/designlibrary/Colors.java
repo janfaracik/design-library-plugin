@@ -9,7 +9,7 @@ import java.util.List;
 public class Colors extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-water-outline plugins-ionicons-api";
     }
 

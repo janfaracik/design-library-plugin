@@ -8,7 +8,7 @@ import hudson.util.ListBoxModel;
 public class Dialogs extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-chatbox-ellipses-outline plugin-ionicons-api";
     }
 

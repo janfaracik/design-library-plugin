@@ -43,7 +43,7 @@ import java.util.Set;
 public class Inputs extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-textbox";
     }
 

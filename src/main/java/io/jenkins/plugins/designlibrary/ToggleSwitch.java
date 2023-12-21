@@ -11,7 +11,7 @@ public class ToggleSwitch extends UISample {
     }
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-toggle-outline plugin-ionicons-api";
     }
 }

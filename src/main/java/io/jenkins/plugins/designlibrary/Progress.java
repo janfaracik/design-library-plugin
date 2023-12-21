@@ -16,7 +16,7 @@ import java.util.List;
 public class Progress extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-hourglass-outline plugin-ionicons-api";
     }
 

@@ -25,7 +25,7 @@ import static java.util.Arrays.asList;
 public class Select extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-select";
     }
 

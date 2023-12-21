@@ -62,7 +62,7 @@ public final class HeteroList extends UISample {
     }
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-close";
     }
 

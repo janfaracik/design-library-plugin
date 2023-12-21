@@ -11,7 +11,7 @@ public class File extends UISample {
     }
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-cloud-upload-outline plugin-ionicons-api";
     }
 }

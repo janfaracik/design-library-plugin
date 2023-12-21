@@ -9,7 +9,7 @@ import hudson.Extension;
 public class Notifications extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-notifications-outline plugins-ionicons-api";
     }
 }

@@ -6,7 +6,7 @@ import hudson.Extension;
 public class Spacing extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-filter-outline plugin-ionicons-api";
     }
 }

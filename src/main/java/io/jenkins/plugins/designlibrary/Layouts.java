@@ -12,7 +12,7 @@ public class Layouts extends UISample {
     }
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-layouts";
     }
 

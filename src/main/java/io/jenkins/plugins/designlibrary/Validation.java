@@ -21,7 +21,7 @@ import java.util.List;
 public class Validation extends UISample {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-checkmark-circle-outline plugin-ionicons-api";
     }
 

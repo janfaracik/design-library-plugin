@@ -67,7 +67,7 @@ THE SOFTWARE.
             <a href="${rootURL}/design-library/${category.url}/${s.urlName}"
                class="task-link ${s == sample ? 'task-link--active' : ''}">
               <span class="task-icon-link">
-                <l:icon src="${s.iconFileName} plugin-design-library" />
+                <l:icon src="${s.icon} plugin-design-library" />
               </span>
               <span class="task-icon-text">
                 ${s.displayName}

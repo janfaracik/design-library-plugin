@@ -3,7 +3,7 @@
 @use "pages";
 
 .sidebar {
-  width: 100px;
+  width: 90px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -27,7 +27,7 @@
     font-size: 12px !important;
     padding: 10px;
     margin: 0 !important;
-    gap: 0.4rem !important;
+    gap: 0.3rem !important;
 
     &::before, &::after {
       inset: 0 !important;

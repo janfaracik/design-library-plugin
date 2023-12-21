@@ -10,7 +10,7 @@ import java.util.Stack;
 public class Symbols extends UISample {
 
 	@Override
-	public String getIconFileName() {
+	public String getIcon() {
 		return "symbol-star-outline plugin-ionicons-api";
 	}
 

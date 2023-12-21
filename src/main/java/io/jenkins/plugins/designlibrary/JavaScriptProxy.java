@@ -14,7 +14,7 @@ public class JavaScriptProxy extends UISample {
     private int i;
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-close";
     }
 

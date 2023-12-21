@@ -13,7 +13,7 @@ import org.kohsuke.stapler.StaplerResponse;
 public class Links extends UISample implements ModelObjectWithContextMenu, ModelObjectWithChildren {
 
     @Override
-    public String getIconFileName() {
+    public String getIcon() {
         return "symbol-at-outline plugin-ionicons-api";
     }
 

@@ -7,7 +7,7 @@ public class Components extends Category {
 
     @Override
     public String getIcon() {
-        return "symbol-star";
+        return "symbol-star-outline plugin-ionicons-api";
     }
 
     @Override
