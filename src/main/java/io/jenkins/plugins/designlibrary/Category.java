@@ -15,6 +15,10 @@ public abstract class Category implements ExtensionPoint {
 
     public abstract String getUrl();
 
+    public int getOrder() {
+        return -1;
+    }
+
     public List<UISample> getItems() {
         return new ArrayList<>(Jenkins.get().getExtensionList(UISample.class)).stream()
                 .filter(e -> e.getCategory().equals(this.getClass()))

@@ -58,35 +58,40 @@ THE SOFTWARE.
       </div>
     </j:if>
 
-    <l:side-panel>
-      <l:app-bar title="" />
-      <l:tasks>
-        <l:search-bar placeholder="${%Search Design Library}"
-                      id="design-library-search-bar" />
-        <j:forEach var="s" items="${category.items}">
-          <div class="task">
-            <a href="${rootURL}/design-library/${category.url}/${s.urlName}"
-               draggable="false"
-               class="task-link ${s == sample ? 'task-link--active' : ''}">
-              <span class="task-icon-link">
-                <l:icon src="${s.icon} plugin-design-library" />
-              </span>
-              <span class="task-icon-text">
-                ${s.displayName}
-              </span>
-            </a>
-          </div>
-        </j:forEach>
-      </l:tasks>
+    <j:set var="showControls" value="${category.items.size() gt 1}" />
+    <j:if test="${showControls}">
+      <l:side-panel>
+        <l:app-bar title="" />
+        <l:tasks>
+          <l:search-bar placeholder="${%Search Design Library}"
+                        id="design-library-search-bar" />
+          <j:forEach var="s" items="${category.items}">
+            <div class="task">
+              <a href="${rootURL}/design-library/${category.url}/${s.urlName}"
+                 draggable="false"
+                 class="task-link ${s == sample ? 'task-link--active' : ''}">
+                <span class="task-icon-link">
+                  <l:icon src="${s.icon} plugin-design-library" />
+                </span>
+                <span class="task-icon-text">
+                  ${s.displayName}
+                </span>
+              </a>
+            </div>
+          </j:forEach>
+        </l:tasks>
 
-      <st:adjunct includes="io.jenkins.plugins.designlibrary.search" />
-    </l:side-panel>
+        <st:adjunct includes="io.jenkins.plugins.designlibrary.search" />
+      </l:side-panel>
+    </j:if>
 
     <l:main-panel>
-      <l:app-bar title="${title}">
-        <button id="button-share" class="jenkins-button" tooltip="${%sharePage}">
-          <l:icon src="symbol-share-outline plugin-ionicons-api" />
-        </button>
+      <l:app-bar title="${showControls ? title : ''}">
+        <j:if test="${showControls}">
+          <button id="button-share" class="jenkins-button" tooltip="${%sharePage}">
+            <l:icon src="symbol-share-outline plugin-ionicons-api" />
+          </button>
+        </j:if>
       </l:app-bar>
 
       <j:set var="descriptor" value="${sample.descriptor}" />

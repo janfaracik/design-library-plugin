@@ -7,7 +7,7 @@ public class Patterns extends Category {
 
     @Override
     public String getIcon() {
-        return "symbol-notifications-outline plugins-ionicons-api";
+        return "symbol-sparkles-outline plugins-ionicons-api";
     }
 
     @Override
