@@ -18,18 +18,12 @@ hr {
 }
 
 .app-page-body {
-  gap: calc(var(--section-padding) * 1.5);
-
-  .app-page-body__side-panel {
-    max-width: 300px;
-  }
+  gap: 50px;
 
   .app-page-body__main-panel {
-    padding-left: calc(var(--section-padding) * 1.5);
-    padding-right: calc(var(--section-padding) * 1.5);
     display: flex !important;
     flex-direction: column;
-    max-width: 1200px;
+    max-width: min(1200px, 60%);
 
     .tabBar {
       align-self: start;
