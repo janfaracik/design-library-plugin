@@ -9,4 +9,9 @@ public class Spacing extends UISample {
     public String getIcon() {
         return "symbol-filter-outline plugin-ionicons-api";
     }
+
+    @Override
+    public Class<? extends Category> getCategory() {
+        return Patterns.class;
+    }
 }

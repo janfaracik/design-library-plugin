@@ -13,6 +13,11 @@ public class Colors extends UISample {
         return "symbol-water-outline plugins-ionicons-api";
     }
 
+    @Override
+    public Class<? extends Category> getCategory() {
+        return Patterns.class;
+    }
+
     public List<Semantic> getSemantics() {
         return List.of(
                 new Semantic("Accent", "Use for branding", "accent-color"),

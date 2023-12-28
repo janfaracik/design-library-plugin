@@ -15,7 +15,7 @@ public class Buttons extends UISample {
 
     @Override
     public Class<? extends Category> getCategory() {
-        return Patterns.class;
+        return Components.class;
     }
 }
 

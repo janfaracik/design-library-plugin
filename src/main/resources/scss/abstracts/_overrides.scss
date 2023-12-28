@@ -2,23 +2,6 @@
   --jdl-spacing: 2rem;
 }
 
-#main-panel {
-  display: flex !important;
-  flex-direction: column;
-  width: 100%;
-  max-width: min(1200px, 65vw);
-  margin-left: auto;
-  margin-right: auto;
-
-  .tabBar {
-    align-self: start;
-  }
-
-  @media (max-width: 970px) {
-    max-width: none;
-  }
-}
-
 code {
   font-family: var(--font-family-mono) !important;
   color: var(--text-color-secondary);
@@ -34,10 +17,6 @@ hr {
   opacity: 0.05;
 }
 
-a {
-  font-weight: inherit;
-}
-
 .app-page-body {
   gap: calc(var(--section-padding) * 1.5);
 
@@ -48,5 +27,16 @@ a {
   .app-page-body__main-panel {
     padding-left: calc(var(--section-padding) * 1.5);
     padding-right: calc(var(--section-padding) * 1.5);
+    display: flex !important;
+    flex-direction: column;
+    max-width: 1200px;
+
+    .tabBar {
+      align-self: start;
+    }
+
+    @media (max-width: 970px) {
+      max-width: none;
+    }
   }
 }

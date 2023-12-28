@@ -1,6 +1,5 @@
 package io.jenkins.plugins.designlibrary;
 
-
 import hudson.Extension;
 import hudson.util.ListBoxModel;
 

@@ -43,6 +43,7 @@ THE SOFTWARE.
           <j:forEach var="s" items="${it.categories}">
             <div class="task">
               <a href="${rootURL}/design-library/${s.url}"
+                 draggable="false"
                  class="task-link ${s == category ? 'task-link--active' : ''}">
                 <span class="task-icon-link">
                   <l:icon src="${s.icon} plugin-design-library" />
@@ -65,6 +66,7 @@ THE SOFTWARE.
         <j:forEach var="s" items="${category.items}">
           <div class="task">
             <a href="${rootURL}/design-library/${category.url}/${s.urlName}"
+               draggable="false"
                class="task-link ${s == sample ? 'task-link--active' : ''}">
               <span class="task-icon-link">
                 <l:icon src="${s.icon} plugin-design-library" />
@@ -87,6 +89,7 @@ THE SOFTWARE.
         </button>
       </l:app-bar>
 
+      <j:set var="descriptor" value="${sample.descriptor}" />
       <st:include page="index.jelly" it="${sample}" from="${sample}" />
 
 <!--      <div class="jdl-previous-next-controls">-->

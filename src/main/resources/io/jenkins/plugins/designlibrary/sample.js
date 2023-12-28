@@ -10,9 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // On the inputs page the preview markup link adds a hash to the url which breaks the regex extraction
       const strippedHash = window.location.href.replace('#', '')
-      const componentName = strippedHash.match(/.+design-library\/(.+)$/)[1]
+      const regex = /\/design-library\/([^\/]+)\/([^\/]+)/;
+      const componentName = strippedHash.match(regex)[2]
 
-      const fullUrl = `${url}/plugin/design-library/${componentName}${fileName}`;
+      const fullUrl = `${url}/plugin/design-library/${componentName}/${fileName}`;
       fetch(fullUrl)
         .then(response => response.text())
         .then(text => {
