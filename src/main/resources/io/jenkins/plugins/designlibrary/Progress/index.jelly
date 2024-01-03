@@ -1,6 +1,5 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:l="/lib/layout" xmlns:f="/lib/form" xmlns:t="/lib/hudson" xmlns:st="jelly:stapler">
-  <s:sample>
     <p class="jdl-paragraph">${%spinner.description}</p>
 
     <div class="jdl-component-group">
@@ -63,6 +62,4 @@
     <s:code language="xml" file="progressiveRendering.jelly" />
     <p class="jdl-paragraph">${%description.adjuncts}</p>
     <s:code language="java" file="display.js" />
-  </s:sample>
 </j:jelly>
-
