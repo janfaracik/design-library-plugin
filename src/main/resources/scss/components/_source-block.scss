@@ -7,7 +7,11 @@ $jdl-component-code-controls-spacing: 0.75rem;
   grid-template-columns: 1fr auto;
   margin-bottom: var(--jdl-spacing);
   z-index: 0;
-  border-radius: 0.66rem;
+  border-radius: 1rem;
+
+  pre {
+    border-radius: 1rem;
+  }
 
   &::before {
     content: "";

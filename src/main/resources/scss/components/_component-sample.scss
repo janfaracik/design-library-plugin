@@ -9,24 +9,28 @@
   margin-bottom: var(--jdl-spacing);
   z-index: 0;
   gap: 1rem;
-  border-radius: 0.66rem;
+  border-radius: 1rem;
+  margin-trim: block;
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(at 40% 20%, hsl(312, 42%, 60%) 0, transparent 50%),
-    radial-gradient(at 80% 0%, hsl(11, 100%, 56%) 0, transparent 50%),
-    radial-gradient(at 0% 50%, hsl(354, 64%, 72%) 0, transparent 50%),
-    radial-gradient(at 80% 50%, hsl(319, 66%, 64%) 0, transparent 50%),
-    radial-gradient(at 0% 100%, hsl(264, 37%, 59%) 0, transparent 50%),
-    radial-gradient(at 80% 100%, hsl(342, 55%, 41%) 0, transparent 50%),
-    radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 1) 0, transparent 50%);
-    border-radius: inherit;
-    z-index: -1;
-    animation: rotate-hue 100s linear infinite;
-  }
+  background: var(--card-background);
+  border: 2px solid var(--card-border-color);
+
+  //&::before,
+  //&::after {
+  //  content: "";
+  //  position: absolute;
+  //  inset: 0;
+  //  background-image: radial-gradient(at 40% 20%, hsl(312, 42%, 60%) 0, transparent 50%),
+  //  radial-gradient(at 80% 0%, hsl(11, 100%, 56%) 0, transparent 50%),
+  //  radial-gradient(at 0% 50%, hsl(354, 64%, 72%) 0, transparent 50%),
+  //  radial-gradient(at 80% 50%, hsl(319, 66%, 64%) 0, transparent 50%),
+  //  radial-gradient(at 0% 100%, hsl(264, 37%, 59%) 0, transparent 50%),
+  //  radial-gradient(at 80% 100%, hsl(342, 55%, 41%) 0, transparent 50%),
+  //  radial-gradient(at 0% 0%, hsla(343, 100%, 76%, 1) 0, transparent 50%);
+  //  border-radius: inherit;
+  //  z-index: -1;
+  //  animation: rotate-hue 100s linear infinite;
+  //}
 
   &::before {
     opacity: 0.05;
@@ -50,7 +54,16 @@
   }
 
   #bottom-sticker {
-    margin: -1.5rem -2rem;
+    width: unset;
+    margin: calc(-1.5rem + 2px) calc(-2rem + 2px);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    .bottom-sticker-inner::before {
+      //background-color: red;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
   }
 }
 
