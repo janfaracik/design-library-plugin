@@ -1,0 +1,27 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout">
+  <st:documentation>
+    <st:attribute name="file" use="required" />
+  </st:documentation>
+
+  <div class="jdl-attributes">
+    <h3>Attributes</h3>
+    <j:forEach var="thing" items="${it.getRoar(attrs.file)}">
+      <div class="jdl-attributes__row">
+        <div class="poopo">
+          <div class="booo">
+            ${thing.name}
+          </div>
+          <j:if test="${thing.required}">
+            <div class="banana">
+              Required
+            </div>
+          </j:if>
+        </div>
+        <div class="descc">
+          ${thing.description}
+        </div>
+      </div>
+    </j:forEach>
+  </div>
+</j:jelly>

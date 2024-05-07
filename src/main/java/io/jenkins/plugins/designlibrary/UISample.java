@@ -1,7 +1,5 @@
 package io.jenkins.plugins.designlibrary;
 
-import static org.apache.commons.io.IOUtils.copy;
-
 import hudson.ExtensionPoint;
 import hudson.model.Action;
 import hudson.model.Describable;
@@ -60,5 +58,9 @@ public abstract class UISample implements ExtensionPoint, Action, Describable<UI
         } catch (IndexOutOfBoundsException e) {
             return null;
         }
+    }
+
+    public List<LoaderThing.JellyAttribute> getRoar(String file) {
+        return LoaderThing.getRoar(file);
     }
 }

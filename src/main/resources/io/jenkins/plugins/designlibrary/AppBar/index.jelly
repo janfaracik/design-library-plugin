@@ -24,26 +24,7 @@
       <l:icon src="symbol-arrow-right" />
     </a>
 
-    <div class="jdl-attributes">
-      <h3>Attributes</h3>
-      <j:forEach var="thing" items="${it.roar}">
-        <div class="jdl-attributes__row">
-          <div class="poopo">
-            <div class="booo">
-              ${thing.name}
-            </div>
-            <j:if test="${thing.required}">
-              <div class="banana">
-                Required
-              </div>
-            </j:if>
-          </div>
-          <div class="descc">
-            ${thing.description}
-          </div>
-        </div>
-      </j:forEach>
-    </div>
+    <s:attributes file="app-bar" />
 
     <hr />
 

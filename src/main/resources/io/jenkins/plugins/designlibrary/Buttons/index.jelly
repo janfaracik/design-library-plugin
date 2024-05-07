@@ -86,11 +86,13 @@ THE SOFTWARE.
       <s:code language="xml" file="copyButton.jelly" />
     </div>
 
-    <p class="jdl-paragraph">${%copy.parameters}</p>
-    <ul class="jdl-list">
-      <li>text - ${%copy.parameters.text}</li>
-      <li>message - ${%copy.parameters.message}</li>
-    </ul>
+    <s:attributes file="copyButton" />
+
+<!--    <p class="jdl-paragraph">${%copy.parameters}</p>-->
+<!--    <ul class="jdl-list">-->
+<!--      <li>text - ${%copy.parameters.text}</li>-->
+<!--      <li>message - ${%copy.parameters.message}</li>-->
+<!--    </ul>-->
 
     <h2 class="jdl-heading">${%help}</h2>
     <div class="jdl-component-group">
