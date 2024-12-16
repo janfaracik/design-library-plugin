@@ -5,11 +5,58 @@ $jdl-component-code-controls-spacing: 0.75rem;
   background: var(--card-background);
   position: relative;
   display: grid;
-  align-items: center;
+  align-items: start;
   grid-template-columns: 1fr auto;
   z-index: 0;
   border-radius: 0.66rem;
   border: var(--jdl-border);
+  overflow: hidden;
+  interpolate-size: allow-keywords;
+  transition: height var(--standard-transition);
+  height: auto;
+
+  &--minimized {
+    height: 230px;
+  }
+
+  &__expander {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    //background: linear-gradient(transparent, white);
+    height: 50px;
+    font-weight: 450;
+    z-index: 0;
+    padding: 0;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inset: -2rem 0 0 0;
+      z-index: -1;
+      pointer-events: none;
+      mask-image: linear-gradient(transparent, black 90%);
+    }
+
+    &::before {
+      background: var(--card-background);
+    }
+
+    &::after {
+      backdrop-filter: blur(20px);
+    }
+
+    span {
+      text-shadow: 0 0 10px var(--card-background);
+    }
+  }
 
   pre {
     background-color: transparent !important;

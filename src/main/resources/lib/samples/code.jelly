@@ -12,7 +12,7 @@
     <st:attribute name="previewable" type="boolean" />
   </st:documentation>
 
-  <div class="jdl-component-code">
+  <div class="jdl-component-code jdl-component-code--minimized">
     <pre class="jdl-component-code__code">
       <code class="language-${language != null ? language : 'xml'} ${file != null ? 'sample-remote' : ''}" data-component-name="${it.class.simpleName}" data-sample="${file}" data-executable="${executable}">
         ${code}
@@ -36,5 +36,10 @@
         <l:copyButton text="${code}" message="${%Copied}" tooltip="${%Copy code block}" clazz="jenkins-button--tertiary" />
       </div>
     </div>
+    <button class="jdl-component-code__expander">
+      <span>
+        Show more
+      </span>
+    </button>
   </div>
 </j:jelly>
