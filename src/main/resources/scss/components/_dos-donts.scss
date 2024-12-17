@@ -2,107 +2,128 @@
 @use "../abstracts/symbols";
 
 .jdl-dos-donts {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr;
-  grid-auto-flow: row dense;
+  svg {
+    width: 1rem;
+    height: 1rem;
+    translate: 0 3px;
 
-  thead, tbody, tr {
-    display: contents;
+    * {
+      stroke-width: 55px !important;
+    }
   }
 
-  th, td {
-    &:first-of-type {
-      color: green;
-      grid-row: 1;
+  thead {
+    th {
+      font-weight: 500;
+      font-size: 1.125rem;
+      text-align: left;
     }
+  }
 
-    &:last-of-type {
-      color: red;
-      grid-row: 2;
+  tbody {
+    td {
+      @include mixins.base-text;
+      display: block;
+      position: relative;
+      padding-left: calc(2rem + 1.5ch);
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        top: -4px;
+        left: 0;
+        border-radius: 100%;
+      }
+
+      &::after {
+        background: var(--background);
+        mask-repeat: no-repeat;
+        mask-position: center;
+      }
+
+      &:first-of-type {
+        &::before {
+          background: var(--success-color, var(--green));
+        }
+
+        &::after {
+          mask-image: symbols.$check;
+          mask-size: 55%;
+        }
+      }
+
+      &:not(:first-of-type) {
+        &::before {
+          background: var(--error-color, var(--red));
+        }
+
+        &::after {
+          mask-image: symbols.$cross;
+          mask-size: 60%;
+        }
+      }
     }
   }
 }
 
-//.jdl-dos-donts {
-//  display: flex;
-//  flex-direction: column;
-//  gap: calc(var(--jdl-spacing) * 0.5);
-//
-//  thead, tbody {
-//    display: contents;
-//  }
-//
-//  svg {
-//    width: 1rem;
-//    height: 1rem;
-//    translate: 0 3px;
-//
-//    * {
-//      stroke-width: 55px !important;
-//    }
-//  }
-//
-//  tr {
-//    display: grid;
-//    grid-template-columns: 1fr 1fr;
-//    gap: calc(var(--jdl-spacing) * 0.5);
-//  }
-//
-//  thead {
-//    th {
-//      font-weight: 500;
-//      font-size: 1.125rem;
-//      text-align: left;
-//    }
-//  }
-//
-//  tbody {
-//    td {
-//      @include mixins.base-text;
-//      display: block;
-//      position: relative;
-//      padding-left: calc(2rem + 1.5ch);
-//
-//      &::before,
-//      &::after {
-//        content: "";
-//        position: absolute;
-//        display: inline-block;
-//        width: 2rem;
-//        height: 2rem;
-//        top: -4px;
-//        left: 0;
-//        border-radius: 100%;
-//      }
-//
-//      &::after {
-//        background: var(--background);
-//        mask-repeat: no-repeat;
-//        mask-position: center;
-//      }
-//
-//      &:first-of-type {
-//        &::before {
-//          background: var(--success-color, var(--green));
-//        }
-//
-//        &::after {
-//          mask-image: symbols.$check;
-//          mask-size: 55%;
-//        }
-//      }
-//
-//      &:not(:first-of-type) {
-//        &::before {
-//          background: var(--error-color, var(--red));
-//        }
-//
-//        &::after {
-//          mask-image: symbols.$cross;
-//          mask-size: 60%;
-//        }
-//      }
-//    }
-//  }
-//}
+@media (min-width: 970px) {
+  .jdl-dos-donts {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--jdl-spacing) * 0.5);
+
+    thead, tbody {
+      display: contents;
+    }
+
+    tr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: calc(var(--jdl-spacing) * 0.5);
+    }
+  }
+}
+
+@media (max-width: 970px) {
+  .jdl-dos-donts {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+
+    thead, tbody, tr {
+      display: contents;
+    }
+
+    & > *:first-child {
+      background: blue;
+    }
+
+    //th {
+    //  &:first-of-type {
+    //    color: green;
+    //    grid-row-start: 1;
+    //  }
+    //
+    //  &:last-of-type {
+    //    color: red;
+    //    grid-row-start: 3;
+    //  }
+    //}
+    //
+    //td {
+    //  &:first-of-type {
+    //    color: green;
+    //    grid-row-start: 2;
+    //  }
+    //
+    //  &:last-of-type {
+    //    color: red;
+    //    grid-row-start: 4;
+    //  }
+    //}
+  }
+}
