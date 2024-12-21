@@ -77,6 +77,28 @@ THE SOFTWARE.
   </dependencyManagement>
 
   <dependencies>
+    <!-- Jackson Databind for object mapping -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.15.2</version> <!-- Use the latest version -->
+    </dependency>
+
+    <!-- Jackson Core -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.15.2</version>
+    </dependency>
+
+    <!-- Jackson Annotations -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.15.2</version>
+    </dependency>
+
+
     <dependency>
       <groupId>io.jenkins.plugins</groupId>
       <artifactId>commons-lang3-api</artifactId>
@@ -124,6 +146,25 @@ THE SOFTWARE.
         <directory>src/main/java</directory>
       </resource>
     </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <executions>
+          <execution>
+            <id>generate-banana-file</id>
+            <phase>process-classes</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <mainClass>io.jenkins.plugins.designlibrary.SearchIndexer</mainClass>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
 </project>
