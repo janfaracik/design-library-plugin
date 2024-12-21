@@ -1,331 +1,253 @@
 [ {
   "name" : "Home",
-  "properties" : {
-    "topics" : {
-      "default" : "Popular topics",
-      "fr" : "Sujets pour moderniser votre interface",
-      "zh" : "您的界面现代化的主题"
-    },
-    "get-involved" : {
-      "default" : "Get involved",
-      "fr" : "Comment s''impliquer",
-      "zh" : "加入我们"
-    }
-  }
+  "headings" : [ {
+    "default" : "Popular topics",
+    "fr" : "Sujets pour moderniser votre interface",
+    "zh" : "您的界面现代化的主题"
+  }, {
+    "default" : "Get involved",
+    "fr" : "Comment s''impliquer",
+    "zh" : "加入我们"
+  } ]
 }, {
   "name" : "AppBar",
-  "properties" : {
-    "topAppBar" : {
-      "default" : "Top app bar"
-    },
-    "bottomAppBar" : {
-      "default" : "Bottom app bar"
-    }
-  }
+  "headings" : [ {
+    "default" : "Top app bar"
+  }, {
+    "default" : "Bottom app bar"
+  } ]
 }, {
   "name" : "Buttons",
-  "properties" : {
-    "symbol" : {
-      "default" : "Symbol",
-      "fr" : "Avec le symbole",
-      "zh" : "带符号"
-    },
-    "help" : {
-      "default" : "Help",
-      "fr" : "Bouton d''aide",
-      "zh" : "帮助按钮"
-    },
-    "default" : {
-      "default" : "Default"
-    },
-    "tertiary" : {
-      "default" : "Tertiary"
-    },
-    "copy" : {
-      "default" : "Copy",
-      "fr" : "Bouton Copier",
-      "zh" : "复制按钮"
-    },
-    "modifiers" : {
-      "default" : "Modifiers"
-    },
-    "primary" : {
-      "default" : "Primary"
-    }
-  }
+  "headings" : [ {
+    "default" : "Default"
+  }, {
+    "default" : "Primary"
+  }, {
+    "default" : "Modifiers"
+  }, {
+    "default" : "Tertiary"
+  }, {
+    "default" : "Symbol",
+    "fr" : "Avec le symbole",
+    "zh" : "带符号"
+  }, {
+    "default" : "Copy",
+    "fr" : "Bouton Copier",
+    "zh" : "复制按钮"
+  }, {
+    "default" : "Help",
+    "fr" : "Bouton d''aide",
+    "zh" : "帮助按钮"
+  } ]
 }, {
   "name" : "Progress",
-  "properties" : {
-    "progressiveRendering" : {
-      "default" : "Progressive rendering",
-      "fr" : "Rendu progressif",
-      "zh" : "渐进式渲染"
-    },
-    "Spinner" : {
-      "default" : "Spinner"
-    },
-    "Progress bar" : {
-      "default" : "Progress bar"
-    }
-  }
+  "headings" : [ {
+    "default" : "Spinner"
+  }, {
+    "default" : "Progress bar"
+  }, {
+    "default" : "Progress bar"
+  }, {
+    "default" : "Progressive rendering",
+    "fr" : "Rendu progressif",
+    "zh" : "渐进式渲染"
+  } ]
 }, {
   "name" : "File",
-  "properties" : {
-    "Additional parameters" : {
-      "default" : "Additional parameters"
-    }
-  }
+  "headings" : [ {
+    "default" : "Additional parameters"
+  } ]
 }, {
   "name" : "ToggleSwitch",
-  "properties" : {
-    "dynamicLabels" : {
-      "default" : "Dynamic labels",
-      "fr" : "Libellés dynamiques",
-      "zh" : "动态标签"
-    },
-    "Inverted" : {
-      "default" : "Inverted"
-    },
-    "Default" : {
-      "default" : "Default"
-    }
-  }
+  "headings" : [ {
+    "default" : "Default"
+  }, {
+    "default" : "Inverted"
+  }, {
+    "default" : "Dynamic labels",
+    "fr" : "Libellés dynamiques",
+    "zh" : "动态标签"
+  } ]
 }, {
   "name" : "Cards",
-  "properties" : {
-    "setting-actions-on-a-card.title" : {
-      "default" : "Setting actions on a card"
-    },
-    "creating-a-card.title" : {
-      "default" : "Creating a card"
-    }
-  }
+  "headings" : [ {
+    "default" : "Creating a card"
+  }, {
+    "default" : "Setting actions on a card"
+  } ]
 }, {
   "name" : "Radios",
-  "properties" : {
-    "Boolean radio" : {
-      "default" : "Boolean radio"
-    },
-    "Simple radios" : {
-      "default" : "Simple radios"
-    }
-  }
+  "headings" : [ {
+    "default" : "Simple radios"
+  }, {
+    "default" : "Boolean radio"
+  } ]
 }, {
   "name" : "JavaScriptProxy",
-  "properties" : {
-    "invokingMethod" : {
-      "default" : "Invoking method",
-      "pt" : "Método de chamada",
-      "fr" : "Invocation de la méthode",
-      "zh" : "调用方式"
-    },
-    "tips.description.2" : {
-      "default" : "Exporting null",
-      "pt" : "Exportando nulo",
-      "fr" : "Exportation de null",
-      "zh" : "正在输出null"
-    },
-    "tips.description.1" : {
-      "default" : "Parameters of the server Java method.",
-      "pt" : "Parâmetros do método do servidor Java",
-      "fr" : "Paramètres de la méthode Java côté serveur",
-      "zh" : "服务器 Java 方法的参数"
-    }
-  }
+  "headings" : [ {
+    "default" : "Invoking method",
+    "pt" : "Método de chamada",
+    "fr" : "Invocation de la méthode",
+    "zh" : "调用方式"
+  }, {
+    "default" : "Parameters of the server Java method.",
+    "pt" : "Parâmetros do método do servidor Java",
+    "fr" : "Paramètres de la méthode Java côté serveur",
+    "zh" : "服务器 Java 方法的参数"
+  }, {
+    "default" : "Exporting null",
+    "pt" : "Exportando nulo",
+    "fr" : "Exportation de null",
+    "zh" : "正在输出null"
+  } ]
 }, {
   "name" : "Checkboxes",
-  "properties" : { }
+  "headings" : [ ]
 }, {
   "name" : "RepeatableList",
-  "properties" : { }
+  "headings" : [ ]
 }, {
   "name" : "Layouts",
-  "properties" : {
-    "Usage" : {
-      "default" : "Usage"
-    },
-    "Badges" : {
-      "default" : "Badges"
-    }
-  }
+  "headings" : [ {
+    "default" : "Usage"
+  }, {
+    "default" : "Badges"
+  }, {
+    "default" : "Usage"
+  }, {
+    "default" : "Usage"
+  } ]
 }, {
   "name" : "Table",
-  "properties" : { }
+  "headings" : [ ]
 }, {
   "name" : "Colors",
-  "properties" : {
-    "Palette" : {
-      "default" : "Palette"
-    },
-    "Semantics" : {
-      "default" : "Semantics"
-    }
-  }
+  "headings" : [ {
+    "default" : "Semantics"
+  }, {
+    "default" : "Palette"
+  } ]
 }, {
   "name" : "Links",
-  "properties" : {
-    "hyperlink.title" : {
-      "default" : "Model hyperlink",
-      "fr" : "Lien hypertexte du modèle",
-      "zh" : "模型超链接"
-    },
-    "breadcrumb.title" : {
-      "default" : "Breadcrumb integration",
-      "fr" : "Intégration du fil d''Ariane",
-      "zh" : "Breadcrumb集成"
-    },
-    "define.title" : {
-      "default" : "Defining context menu",
-      "fr" : "Définition du menu contextuel",
-      "zh" : "定义背景选单"
-    }
-  }
+  "headings" : [ {
+    "default" : "Defining context menu",
+    "fr" : "Définition du menu contextuel",
+    "zh" : "定义背景选单"
+  }, {
+    "default" : "Breadcrumb integration",
+    "fr" : "Intégration du fil d''Ariane",
+    "zh" : "Breadcrumb集成"
+  }, {
+    "default" : "Model hyperlink",
+    "fr" : "Lien hypertexte du modèle",
+    "zh" : "模型超链接"
+  } ]
 }, {
   "name" : "Menu",
-  "properties" : { }
+  "headings" : [ ]
 }, {
   "name" : "Spacing",
-  "properties" : { }
+  "headings" : [ ]
 }, {
   "name" : "Symbols",
-  "properties" : {
-    "customSymbols" : {
-      "default" : "Custom Symbols",
-      "fr" : "Symboles personnalisés",
-      "zh" : "自定义符号"
-    },
-    "ioniconsApi" : {
-      "default" : "Add more symbols with the ionicons API plugin",
-      "fr" : "Ajouter plus de symboles avec l''API du plugin ionicons",
-      "zh" : "使用 ionicons API 插件添加更多符号"
-    },
-    "usage.title" : {
-      "default" : "Using Symbols",
-      "fr" : "Utiliser des symboles",
-      "zh" : "使用符号"
-    }
-  }
+  "headings" : [ {
+    "default" : "Using Symbols",
+    "fr" : "Utiliser des symboles",
+    "zh" : "使用符号"
+  }, {
+    "default" : "Add more symbols with the ionicons API plugin",
+    "fr" : "Ajouter plus de symboles avec l''API du plugin ionicons",
+    "zh" : "使用 ionicons API 插件添加更多符号"
+  }, {
+    "default" : "Custom Symbols",
+    "fr" : "Symboles personnalisés",
+    "zh" : "自定义符号"
+  } ]
 }, {
   "name" : "Dialogs",
-  "properties" : {
-    "Forms" : {
-      "default" : "Forms"
-    },
-    "Prompts" : {
-      "default" : "Prompts"
-    },
-    "OK Button texts" : {
-      "default" : "OK Button texts"
-    },
-    "Modals" : {
-      "default" : "Modals"
-    },
-    "Customizing the appearance and behaviour" : {
-      "default" : "Customizing the appearance and behaviour"
-    },
-    "Alerts" : {
-      "default" : "Alerts"
-    },
-    "Confirmations" : {
-      "default" : "Confirmations"
-    }
-  }
+  "headings" : [ {
+    "default" : "Alerts"
+  }, {
+    "default" : "Prompts"
+  }, {
+    "default" : "Confirmations"
+  }, {
+    "default" : "Modals"
+  }, {
+    "default" : "Forms"
+  }, {
+    "default" : "Customizing the appearance and behaviour"
+  }, {
+    "default" : "OK Button texts"
+  } ]
 }, {
   "name" : "Select",
-  "properties" : {
-    "dynamic" : {
-      "default" : "Dynamic select",
-      "fr" : "Sélection dynamique",
-      "zh" : "动态选择"
-    },
-    "Advanced select" : {
-      "default" : "Advanced select"
-    },
-    "searchable" : {
-      "default" : "Autocomplete"
-    },
-    "Simple select" : {
-      "default" : "Simple select"
-    }
-  }
+  "headings" : [ {
+    "default" : "Simple select"
+  }, {
+    "default" : "Advanced select"
+  }, {
+    "default" : "Dynamic select",
+    "fr" : "Sélection dynamique",
+    "zh" : "动态选择"
+  }, {
+    "default" : "Autocomplete"
+  } ]
 }, {
   "name" : "Tooltips",
-  "properties" : {
-    "HTML and interactive content" : {
-      "default" : "HTML and interactive content"
-    },
-    "Basic tooltip" : {
-      "default" : "Basic tooltip"
-    }
-  }
+  "headings" : [ {
+    "default" : "Basic tooltip"
+  }, {
+    "default" : "HTML and interactive content"
+  } ]
 }, {
   "name" : "DynamicDropDownListBox",
-  "properties" : { }
+  "headings" : [ ]
 }, {
   "name" : "Notifications",
-  "properties" : {
-    "Warning" : {
-      "default" : "Warning"
-    },
-    "Closing notifications" : {
-      "default" : "Closing notifications"
-    },
-    "Error" : {
-      "default" : "Error"
-    },
-    "Default" : {
-      "default" : "Default"
-    },
-    "Success" : {
-      "default" : "Success"
-    }
-  }
+  "headings" : [ {
+    "default" : "Default"
+  }, {
+    "default" : "Success"
+  }, {
+    "default" : "Warning"
+  }, {
+    "default" : "Error"
+  }, {
+    "default" : "Closing notifications"
+  } ]
 }, {
   "name" : "Banner",
-  "properties" : {
-    "success" : {
-      "default" : "Success"
-    },
-    "warning" : {
-      "default" : "Warning"
-    },
-    "danger" : {
-      "default" : "Danger"
-    },
-    "info" : {
-      "default" : "Info"
-    }
-  }
+  "headings" : [ {
+    "default" : "Info"
+  }, {
+    "default" : "Warning"
+  }, {
+    "default" : "Danger"
+  }, {
+    "default" : "Success"
+  } ]
 }, {
   "name" : "Validation",
-  "properties" : { }
+  "headings" : [ ]
 }, {
   "name" : "Inputs",
-  "properties" : {
-    "Search" : {
-      "default" : "Search"
-    },
-    "Textbox" : {
-      "default" : "Textbox"
-    },
-    "Password fields" : {
-      "default" : "Password fields"
-    },
-    "Code editor" : {
-      "default" : "Code editor"
-    },
-    "Number fields" : {
-      "default" : "Number fields"
-    }
-  }
+  "headings" : [ {
+    "default" : "Textbox"
+  }, {
+    "default" : "Search"
+  }, {
+    "default" : "Number fields"
+  }, {
+    "default" : "Password fields"
+  }, {
+    "default" : "Code editor"
+  } ]
 }, {
   "name" : "Stylesheets",
-  "properties" : {
-    "Naming" : {
-      "default" : "Naming"
-    },
-    "Prefixes" : {
-      "default" : "Prefixes"
-    }
-  }
+  "headings" : [ {
+    "default" : "Naming"
+  }, {
+    "default" : "Prefixes"
+  } ]
 } ]

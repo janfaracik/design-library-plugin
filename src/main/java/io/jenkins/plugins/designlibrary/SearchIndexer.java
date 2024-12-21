@@ -1,6 +1,5 @@
 package io.jenkins.plugins.designlibrary;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.w3c.dom.Document;
@@ -56,11 +55,14 @@ public class SearchIndexer {
 
     public static Bodyguard convertToBodyguard(LanguageThing languageThing) {
         // Transform into the required format
-        Map<String, Map<String, String>> transformedProperties = new HashMap<>();
+        List<Map<String, String>> output = new ArrayList<>();
 
         for (String heading : languageThing.headings) {
+
             if (!heading.startsWith("${%")) {
-                transformedProperties.put(heading, Map.of("default", heading));
+                Map<String, String> transformedProperties = new HashMap<>();
+                transformedProperties.put("default", heading);
+                output.add(transformedProperties);
                 continue;
             }
 
@@ -72,11 +74,11 @@ public class SearchIndexer {
                     translations.put(language, entry.getValue().getProperty(transformedHeading, transformedHeading));
                 }
             }
-            transformedProperties.put(transformedHeading, translations);
+            output.add(translations);
         }
 
         // Create and return the Bodyguard
-        return new Bodyguard(languageThing.name(), transformedProperties);
+        return new Bodyguard(languageThing.name(), output);
     }
 
     public static List<LanguageThing> generateLanguageThings(String basePath) throws Exception {
@@ -138,7 +140,6 @@ public class SearchIndexer {
         return headings;
     }
 
-
     private static Properties readPropertiesFile(File file) {
         Properties properties = new Properties();
         try (FileReader reader = new FileReader(file)) {
@@ -158,20 +159,18 @@ public class SearchIndexer {
         }
     }
 
-// Name is the name of the folder
-// Index contents is the contents of the .jelly file
-// properties is a map of country + contents of the properties file
-public record LanguageThing(String name, List<String> headings, Map<String, Properties> properties) {}
+    // Name is the name of the folder
+    // Index contents is the contents of the .jelly file
+    // properties is a map of country + contents of the properties file
+    public record LanguageThing(String name, List<String> headings, Map<String, Properties> properties) {}
 
-// Name is the name of the folder
-// properties is
-// {
-//   "page.title": {
-//       "default": "i am a title",
-//       "fr": 'ce vou plais title"
-//   }
-// }
-public record Bodyguard(String name, Map<String, Map<String, String>> properties) {}
-
-
+    // Name is the name of the folder
+    // properties is
+    // [
+    //   {
+    //       "default": "i am a title",
+    //       "fr": 'ce vou plais title"
+    //   }
+    // ]
+    public record Bodyguard(String name, List<Map<String, String>> headings) {}
 }
