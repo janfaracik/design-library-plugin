@@ -31,7 +31,6 @@ public class SearchIndexer {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         String output = objectMapper.writeValueAsString(bodyguards);
-        System.out.println(output);
 
         writeToFile("src/main/resources/index.json", output);
     }
