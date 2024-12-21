@@ -55,6 +55,8 @@ THE SOFTWARE.
         </j:if>
       </l:app-bar>
 
+      ${it.searchResults}
+
       <p class="jdl-subtitle">${it.description}</p>
 
       <d:invokeBody/>

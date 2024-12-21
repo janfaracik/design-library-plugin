@@ -161,7 +161,7 @@ THE SOFTWARE.
           </execution>
         </executions>
         <configuration>
-          <mainClass>io.jenkins.plugins.designlibrary.SearchIndexer</mainClass>
+          <mainClass>io.jenkins.plugins.designlibrary.search.SearchIndexer</mainClass>
         </configuration>
       </plugin>
     </plugins>

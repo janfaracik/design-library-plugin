@@ -1,4 +1,4 @@
-package io.jenkins.plugins.designlibrary;
+package io.jenkins.plugins.designlibrary.search;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -162,14 +162,4 @@ public class SearchIndexer {
     // Index contents is the contents of the .jelly file
     // properties is a map of country + contents of the properties file
     private record LanguageThing(String name, List<String> headings, Map<String, Properties> properties) {}
-
-    // Name is the name of the folder
-    // properties is
-    // [
-    //   {
-    //       "default": "i am a title",
-    //       "fr": 'ce vou plais title"
-    //   }
-    // ]
-    private record Bodyguard(String name, List<Map<String, String>> headings) {}
 }

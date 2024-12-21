@@ -1,15 +1,23 @@
 package io.jenkins.plugins.designlibrary;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.ExtensionPoint;
 import hudson.model.Action;
 import hudson.model.Describable;
+import io.jenkins.plugins.designlibrary.search.Bodyguard;
+import io.jenkins.plugins.designlibrary.search.SearchResult;
 import io.jenkins.plugins.prism.PrismConfiguration;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 import jenkins.model.Jenkins;
@@ -20,6 +28,8 @@ import org.kohsuke.accmod.restrictions.NoExternalUse;
  * @author Kohsuke Kawaguchi
  */
 public abstract class UISample implements ExtensionPoint, Action, Describable<UISample> {
+
+    private List<SearchResult> searchResults;
 
     /**
      * Gets the URL-friendly name of the UI sample.
@@ -104,5 +114,41 @@ public abstract class UISample implements ExtensionPoint, Action, Describable<UI
         } catch (IndexOutOfBoundsException e) {
             return null;
         }
+    }
+
+    public List<SearchResult> getSearchResults() {
+        var samples = getAll();
+//        System.out.println(samples.stream().map(e -> e.getClass().getSimpleName()).toList());
+        if (searchResults == null) {
+            ClassLoader classLoader = UISample.class.getClassLoader();
+            try (InputStream inputStream = classLoader.getResourceAsStream("index.json")) {
+                if (inputStream == null) {
+                    throw new IOException("File not found in resources: index.json - you might need to recompile");
+                }
+
+                // Map JSON content to Bodyguard object
+                ObjectMapper objectMapper = new ObjectMapper();
+                List<Bodyguard> bodyguards = objectMapper.readValue(inputStream, new TypeReference<>() {
+                });
+
+//                System.out.println(bodyguard.name);
+                searchResults = bodyguards.stream().map(bodyguard -> {
+                    Optional<UISample> uiSample = samples.stream()
+                            .filter(e -> e.getClass().getSimpleName().equals(bodyguard.name()))
+                            .findFirst();
+
+                    if (uiSample.isEmpty()) {
+                        return new SearchResult("Home", "symbol-home", List.of());
+                    }
+
+                    return new SearchResult(uiSample.get().getDisplayName(), uiSample.get().getIconFileName(),
+                            bodyguard.headings().stream().map(e -> e.get("default")).toList());
+                }).toList();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        return searchResults;
     }
 }
