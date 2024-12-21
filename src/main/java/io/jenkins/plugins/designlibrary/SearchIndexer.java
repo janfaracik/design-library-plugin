@@ -9,9 +9,11 @@ import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
@@ -29,10 +31,26 @@ public class SearchIndexer {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-        try {
-            System.out.println(objectMapper.writeValueAsString(bodyguards));
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
+        String output = objectMapper.writeValueAsString(bodyguards);
+        System.out.println(output);
+
+        writeToFile("src/main/resources/index.json", output);
+    }
+
+    public static void writeToFile(String filePath, String content) throws IOException {
+        File file = new File(filePath);
+
+        // Ensure the parent directories exist
+        File parentDir = file.getParentFile();
+        if (parentDir != null && !parentDir.exists()) {
+            if (!parentDir.mkdirs()) {
+                throw new IOException("Failed to create parent directories for file: " + filePath);
+            }
+        }
+
+        // Write content to the file
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            writer.write(content);
         }
     }
 
