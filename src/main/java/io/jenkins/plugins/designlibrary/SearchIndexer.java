@@ -32,17 +32,17 @@ public class SearchIndexer {
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         String output = objectMapper.writeValueAsString(bodyguards);
 
-        writeToFile("src/main/resources/index.json", output);
+        writeToFile(output);
     }
 
-    public static void writeToFile(String filePath, String content) throws IOException {
-        File file = new File(filePath);
+    private static void writeToFile(String content) throws IOException {
+        File file = new File("src/main/resources/index.json");
 
         // Ensure the parent directories exist
         File parentDir = file.getParentFile();
         if (parentDir != null && !parentDir.exists()) {
             if (!parentDir.mkdirs()) {
-                throw new IOException("Failed to create parent directories for file: " + filePath);
+                throw new IOException("Failed to create parent directories for file: " + "src/main/resources/index.json");
             }
         }
 
@@ -52,7 +52,7 @@ public class SearchIndexer {
         }
     }
 
-    public static Bodyguard convertToBodyguard(LanguageThing languageThing) {
+    private static Bodyguard convertToBodyguard(LanguageThing languageThing) {
         // Transform into the required format
         List<Map<String, String>> output = new ArrayList<>();
 
@@ -80,7 +80,7 @@ public class SearchIndexer {
         return new Bodyguard(languageThing.name(), output);
     }
 
-    public static List<LanguageThing> generateLanguageThings(String basePath) throws Exception {
+    private static List<LanguageThing> generateLanguageThings(String basePath) throws Exception {
         List<LanguageThing> languageThings = new ArrayList<>();
 
         // Traverse the base directory
@@ -113,7 +113,7 @@ public class SearchIndexer {
         return languageThings;
     }
 
-    public static List<String> extractHeadingsFromJelly(String contents) throws Exception {
+    private static List<String> extractHeadingsFromJelly(String contents) throws Exception {
         List<String> headings = new ArrayList<>();
 
         // Parse the XML content from the string
@@ -161,7 +161,7 @@ public class SearchIndexer {
     // Name is the name of the folder
     // Index contents is the contents of the .jelly file
     // properties is a map of country + contents of the properties file
-    public record LanguageThing(String name, List<String> headings, Map<String, Properties> properties) {}
+    private record LanguageThing(String name, List<String> headings, Map<String, Properties> properties) {}
 
     // Name is the name of the folder
     // properties is
@@ -171,5 +171,5 @@ public class SearchIndexer {
     //       "fr": 'ce vou plais title"
     //   }
     // ]
-    public record Bodyguard(String name, List<Map<String, String>> headings) {}
+    private record Bodyguard(String name, List<Map<String, String>> headings) {}
 }
