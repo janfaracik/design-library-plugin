@@ -32,23 +32,10 @@ public class SearchIndexer {
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
         String output = objectMapper.writeValueAsString(bodyguards);
 
-        writeToFile(output);
-    }
+        File file = new File("src/main/resources/search-index.json");
 
-    private static void writeToFile(String content) throws IOException {
-        File file = new File("src/main/resources/index.json");
-
-        // Ensure the parent directories exist
-        File parentDir = file.getParentFile();
-        if (parentDir != null && !parentDir.exists()) {
-            if (!parentDir.mkdirs()) {
-                throw new IOException("Failed to create parent directories for file: " + "src/main/resources/index.json");
-            }
-        }
-
-        // Write content to the file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-            writer.write(content);
+            writer.write(output);
         }
     }
 
