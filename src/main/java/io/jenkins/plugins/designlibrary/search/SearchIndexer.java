@@ -2,12 +2,6 @@ package io.jenkins.plugins.designlibrary.search;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -18,15 +12,26 @@ import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.util.*;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 
 public class SearchIndexer {
 
+    private static final Logger LOGGER = Logger.getLogger(SearchIndexer.class.getName());
+
     public static void main(String[] args) throws Exception {
+        LOGGER.info("🕵️  Generating search index");
+
         String basePath = "src/main/resources/io/jenkins/plugins/designlibrary/";
         List<LanguageThing> languageThings = generateLanguageThings(basePath);
 
-        List<Bodyguard> bodyguards = languageThings.stream().map(SearchIndexer::convertToBodyguard).toList();
+        List<Bodyguard> bodyguards =
+                languageThings.stream().map(SearchIndexer::convertToBodyguard).toList();
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -54,7 +59,8 @@ public class SearchIndexer {
 
             Map<String, String> translations = new HashMap<>();
             String transformedHeading = heading.replace("${%", "").replace("}", "");
-            for (Map.Entry<String, Properties> entry : languageThing.properties().entrySet()) {
+            for (Map.Entry<String, Properties> entry :
+                    languageThing.properties().entrySet()) {
                 String language = entry.getKey();
                 if (entry.getKey().equals("default") || entry.getValue().getProperty(transformedHeading) != null) {
                     translations.put(language, entry.getValue().getProperty(transformedHeading, transformedHeading));
@@ -87,11 +93,15 @@ public class SearchIndexer {
 
             // Load all properties files in the folder
             Map<String, Properties> propertiesMap = Arrays.stream(Objects.requireNonNull(folder.listFiles()))
-                    .filter(file -> file.getName().startsWith("index") && file.getName().endsWith(".properties"))
+                    .filter(file ->
+                            file.getName().startsWith("index") && file.getName().endsWith(".properties"))
                     .collect(Collectors.toMap(
-                            file -> file.getName().replace(".properties", "").replace("index_", "").replace("index", "default"), // Country name
+                            file -> file.getName()
+                                    .replace(".properties", "")
+                                    .replace("index_", "")
+                                    .replace("index", "default"), // Country name
                             SearchIndexer::readPropertiesFile // File contents
-                    ));
+                            ));
 
             // Create a LanguageThing and add it to the list
             languageThings.add(new LanguageThing(folderName, headings, propertiesMap));

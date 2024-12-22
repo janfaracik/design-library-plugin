@@ -9,7 +9,6 @@ import hudson.model.Describable;
 import io.jenkins.plugins.designlibrary.search.Bodyguard;
 import io.jenkins.plugins.designlibrary.search.SearchResult;
 import io.jenkins.plugins.prism.PrismConfiguration;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -118,7 +117,7 @@ public abstract class UISample implements ExtensionPoint, Action, Describable<UI
 
     public List<SearchResult> getSearchResults() {
         var samples = getAll();
-//        System.out.println(samples.stream().map(e -> e.getClass().getSimpleName()).toList());
+        //        System.out.println(samples.stream().map(e -> e.getClass().getSimpleName()).toList());
         if (searchResults == null) {
             ClassLoader classLoader = UISample.class.getClassLoader();
             try (InputStream inputStream = classLoader.getResourceAsStream("index.json")) {
@@ -128,22 +127,27 @@ public abstract class UISample implements ExtensionPoint, Action, Describable<UI
 
                 // Map JSON content to Bodyguard object
                 ObjectMapper objectMapper = new ObjectMapper();
-                List<Bodyguard> bodyguards = objectMapper.readValue(inputStream, new TypeReference<>() {
-                });
+                List<Bodyguard> bodyguards = objectMapper.readValue(inputStream, new TypeReference<>() {});
 
-//                System.out.println(bodyguard.name);
-                searchResults = bodyguards.stream().map(bodyguard -> {
-                    Optional<UISample> uiSample = samples.stream()
-                            .filter(e -> e.getClass().getSimpleName().equals(bodyguard.name()))
-                            .findFirst();
+                //                System.out.println(bodyguard.name);
+                searchResults = bodyguards.stream()
+                        .map(bodyguard -> {
+                            Optional<UISample> uiSample = samples.stream()
+                                    .filter(e -> e.getClass().getSimpleName().equals(bodyguard.name()))
+                                    .findFirst();
 
-                    if (uiSample.isEmpty()) {
-                        return new SearchResult("Home", "symbol-home", List.of());
-                    }
+                            if (uiSample.isEmpty()) {
+                                return new SearchResult("Home", "symbol-home", List.of());
+                            }
 
-                    return new SearchResult(uiSample.get().getDisplayName(), uiSample.get().getIconFileName(),
-                            bodyguard.headings().stream().map(e -> e.get("default")).toList());
-                }).toList();
+                            return new SearchResult(
+                                    uiSample.get().getDisplayName(),
+                                    uiSample.get().getIconFileName(),
+                                    bodyguard.headings().stream()
+                                            .map(e -> e.get("default"))
+                                            .toList());
+                        })
+                        .toList();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
