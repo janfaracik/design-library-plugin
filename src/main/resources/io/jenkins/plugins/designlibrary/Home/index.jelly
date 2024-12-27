@@ -1,5 +1,5 @@
 <?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:l="/lib/layout" xmlns:s="/lib/samples">
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:l="/lib/layout" xmlns:s="/lib/samples" xmlns:f="/lib/form">
   <l:layout title="Home - Design Library">
     <st:adjunct includes="io.jenkins.plugins.designlibrary.styles" />
 
@@ -19,6 +19,13 @@
           <p class="jdl-section__description">${%description}</p>
         </div>
       </s:section>
+
+      <j:set var="descriptor" value="${it.descriptor}" />
+      <form>
+<!--        <f:entry title="U.S. State" field="state">-->
+          <f:combobox field="state" />
+<!--        </f:entry>-->
+      </form>
 
       <s:section title="${%topics}">
         <div class="app-home__side-by-side">

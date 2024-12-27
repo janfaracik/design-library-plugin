@@ -2,9 +2,13 @@ package io.jenkins.plugins.designlibrary;
 
 import hudson.Extension;
 import hudson.PluginWrapper;
+import hudson.model.Describable;
+import hudson.model.Descriptor;
 import hudson.model.RootAction;
 import java.util.List;
 import java.util.Map;
+
+import hudson.util.ComboBoxModel;
 import jenkins.model.Jenkins;
 
 /**
@@ -13,7 +17,7 @@ import jenkins.model.Jenkins;
  * @author Kohsuke Kawaguchi
  */
 @Extension
-public class Home implements RootAction {
+public class Home implements RootAction, Describable<Home> {
 
     public String getIconFileName() {
         return "symbol-design-library plugin-design-library";
@@ -55,5 +59,17 @@ public class Home implements RootAction {
             return plugin.getVersion();
         }
         return "Version not available";
+    }
+
+    @Extension
+    public static final class DescriptorImpl extends HomeDescriptor {
+        public ComboBoxModel doFillStateItems() {
+            return new ComboBoxModel("hello", "jello", "bello");
+        }
+    }
+
+    @Override
+    public Descriptor<Home> getDescriptor() {
+        return (HomeDescriptor) Jenkins.get().getDescriptorOrDie(getClass());
     }
 }

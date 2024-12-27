@@ -117,10 +117,9 @@ public abstract class UISample implements ExtensionPoint, Action, Describable<UI
 
     public List<SearchResult> getSearchResults() {
         var samples = getAll();
-        //        System.out.println(samples.stream().map(e -> e.getClass().getSimpleName()).toList());
         if (searchResults == null) {
             ClassLoader classLoader = UISample.class.getClassLoader();
-            try (InputStream inputStream = classLoader.getResourceAsStream("index.json")) {
+            try (InputStream inputStream = classLoader.getResourceAsStream("search-index.json")) {
                 if (inputStream == null) {
                     throw new IOException("File not found in resources: index.json - you might need to recompile");
                 }
