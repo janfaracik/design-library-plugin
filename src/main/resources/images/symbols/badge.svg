@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="552px" height="552px" viewBox="0 0 552 552" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g transform="translate(106, 106)" stroke="currentColor" stroke-width="32">
-            <rect x="0" y="0" width="300" height="300" rx="10%" />
-            <ellipse cx="290" cy="0" rx="26" ry="26" fill="currentColor" />
-        </g>
+<svg width="512" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(81, 81)" fill="none" stroke="currentColor" stroke-width="32">
+        <rect x="0" y="0" width="350" height="350" rx="15%" />
+        <ellipse cx="336" cy="9" rx="50" ry="50" fill="currentColor" />
     </g>
 </svg>

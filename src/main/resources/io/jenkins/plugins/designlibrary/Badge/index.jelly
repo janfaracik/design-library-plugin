@@ -25,10 +25,26 @@ THE SOFTWARE.
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:s="/lib/samples" xmlns:l="/lib/layout" xmlns:t="/lib/hudson">
   <s:layout>
-    <s:section title="${%default}">
+    <s:section title="${%information}">
       <s:group>
         <s:preview>
-          <l:badge badge="123" />
+          <l:badge badge="${it.infoBadge}" />
+        </s:preview>
+        <s:code file="default.jelly" />
+      </s:group>
+    </s:section>
+    <s:section title="${%warning}">
+      <s:group>
+        <s:preview>
+          <l:badge badge="${it.warningBadge}" />
+        </s:preview>
+        <s:code file="default.jelly" />
+      </s:group>
+    </s:section>
+    <s:section title="${%danger}">
+      <s:group>
+        <s:preview>
+          <l:badge badge="${it.dangerBadge}" />
         </s:preview>
         <s:code file="default.jelly" />
       </s:group>
