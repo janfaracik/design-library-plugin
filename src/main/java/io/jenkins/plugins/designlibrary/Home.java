@@ -3,8 +3,11 @@ package io.jenkins.plugins.designlibrary;
 import hudson.Extension;
 import hudson.PluginWrapper;
 import hudson.model.RootAction;
+
 import java.util.List;
 import java.util.Map;
+
+import hudson.util.VersionNumber;
 import jenkins.model.Jenkins;
 
 /**
@@ -55,5 +58,13 @@ public class Home implements RootAction {
             return plugin.getVersion();
         }
         return "Version not available";
+    }
+
+    public List<UISample> getRecentTopics() {
+        return getAll().stream()
+                .filter(e -> e.getSince() != null)
+                .sorted((o1, o2) -> new VersionNumber(o2.getSince()).compareTo(new VersionNumber(o1.getSince())))
+                .limit(4)
+                .toList();
     }
 }

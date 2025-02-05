@@ -22,24 +22,13 @@
 
       <s:section title="${%topics}">
         <div class="app-home__side-by-side">
-          <s:card icon="symbol-cards plugin-design-library"
-                  title="${%cards}"
-                  description="${%cards-description}"
-                  href="cards"
-                  tag="${%New}" />
-          <s:card icon="symbol-dropdown-menu plugin-design-library"
-                  title="${%menu}"
-                  description="${%menu-description}"
-                  href="menu"
-                  tag="${%New}" />
-          <s:card icon="symbol-buttons plugin-design-library"
-                  title="${%buttons}"
-                  description="${%buttons-description}"
-                  href="buttons" />
-          <s:card icon="symbol-star-outline plugin-ionicons-api"
-                  title="${%symbols}"
-                  description="${%symbols-description}"
-                  href="symbols" />
+          <j:forEach var="item" items="${it.recentTopics}">
+            <s:card icon="${item.iconFileName}"
+                    title="${item.displayName}"
+                    description="${item.description}"
+                    href="${item.urlName}"
+                    tag="${%New}" />
+          </j:forEach>
         </div>
       </s:section>
 
