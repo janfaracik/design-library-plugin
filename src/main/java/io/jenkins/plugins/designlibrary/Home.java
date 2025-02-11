@@ -2,10 +2,16 @@ package io.jenkins.plugins.designlibrary;
 
 import hudson.Extension;
 import hudson.PluginWrapper;
+import hudson.model.AbstractModelObject;
 import hudson.model.RootAction;
 import java.util.List;
 import java.util.Map;
+
+import hudson.search.SearchIndex;
+import hudson.search.SearchIndexBuilder;
+import hudson.search.SearchItem;
 import jenkins.model.Jenkins;
+import jenkins.search.SearchGroup;
 
 /**
  * Entry point to all the UI samples.
@@ -13,7 +19,7 @@ import jenkins.model.Jenkins;
  * @author Kohsuke Kawaguchi
  */
 @Extension
-public class Home implements RootAction {
+public class Home extends AbstractModelObject implements RootAction {
 
     public String getIconFileName() {
         return "symbol-design-library plugin-design-library";
@@ -55,5 +61,47 @@ public class Home implements RootAction {
             return plugin.getVersion();
         }
         return "Version not available";
+    }
+
+    @Override
+    public String getSearchUrl() {
+        return "";
+    }
+
+    @Override
+    protected SearchIndexBuilder makeSearchIndex() {
+        SearchIndexBuilder searchIndexBuilder = new SearchIndexBuilder();
+
+        for (UISample ui : getAll()) {
+            searchIndexBuilder.add(new SearchItem() {
+
+                @Override
+                public String getSearchName() {
+                    return ui.getDisplayName();
+                }
+
+                @Override
+                public String getSearchUrl() {
+                    return getUrlName() + "/" + ui.getUrlName();
+                }
+
+                @Override
+                public String getSearchIcon() {
+                    return ui.getIconFileName();
+                }
+
+                @Override
+                public SearchGroup getSearchGroup() {
+                    return SearchGroup.get(DesignLibrarySearchGroup.class);
+                }
+
+                @Override
+                public SearchIndex getSearchIndex() {
+                    return null;
+                }
+            });
+        }
+
+        return searchIndexBuilder;
     }
 }
