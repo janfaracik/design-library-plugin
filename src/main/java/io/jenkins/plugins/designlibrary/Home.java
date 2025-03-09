@@ -4,12 +4,11 @@ import hudson.Extension;
 import hudson.PluginWrapper;
 import hudson.model.AbstractModelObject;
 import hudson.model.RootAction;
-import java.util.List;
-import java.util.Map;
-
 import hudson.search.SearchIndex;
 import hudson.search.SearchIndexBuilder;
 import hudson.search.SearchItem;
+import java.util.List;
+import java.util.Map;
 import jenkins.model.Jenkins;
 import jenkins.search.SearchGroup;
 
