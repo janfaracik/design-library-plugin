@@ -8,10 +8,19 @@
     <l:task title="${%Home}" href="${rootURL}/design-library" icon="symbol-design-library plugin-design-library" contextMenu="false" />
 
     <j:forEach var="s" items="${it.grouped.entrySet()}">
-      <div class="app-sidepanel__heading">${s.key.displayName}</div>
-      <j:forEach var="s" items="${s.value}">
-        <l:task title="${s.displayName}" href="${rootURL}/design-library/${s.urlName}" icon="${s.iconFileName}" />
-      </j:forEach>
+      <details class="jenkins-side-nav__group"
+               data-side-nav-key="design-library"
+               data-side-nav-value="${s.key}"
+               open="true">
+        <summary class="jenkins-side-nav__group-heading">
+          ${s.key.displayName}
+        </summary>
+        <div class="jenkins-side-nav__group-children">
+          <j:forEach var="s" items="${s.value}">
+            <l:task title="${s.displayName}" href="${rootURL}/design-library/${s.urlName}" icon="${s.iconFileName}" />
+          </j:forEach>
+        </div>
+      </details>
     </j:forEach>
   </l:tasks>
 
