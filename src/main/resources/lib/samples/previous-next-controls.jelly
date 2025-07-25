@@ -9,13 +9,19 @@
   <div class="jdl-previous-next-controls">
     <div>
       <j:if test="${attrs.previousPage != null}">
-        <a href="${rootURL}/design-library/${attrs.previousPage.urlName}" class="jenkins-button jenkins-button--tertiary jdl-previous-button">
+        <a href="${rootURL}/design-library/${attrs.previousPage.urlName}" class="jenkins-button jenkins-button--tertiary jdl-previous-button"
+           data-keyboard-shortcut-title="${%Previous page}"
+           data-keyboard-shortcut-subtitle="${attrs.previousPage.displayName}"
+           data-keyboard-shortcut="left">
           <l:icon src="symbol-arrow-back-outline plugin-ionicons-api" class="jdl-previous-next-controls__arrow" />
           <span>${attrs.previousPage.displayName}</span>
         </a>
       </j:if>
       <j:if test="${attrs.previousPage == null and !isHome}">
-        <a href="${rootURL}/design-library/" class="jenkins-button jenkins-button--tertiary jdl-previous-button">
+        <a href="${rootURL}/design-library/" class="jenkins-button jenkins-button--tertiary jdl-previous-button"
+           data-keyboard-shortcut-title="${%Previous page}"
+           data-keyboard-shortcut-subtitle="${%Home}"
+           data-keyboard-shortcut="left">
           <l:icon src="symbol-arrow-back-outline plugin-ionicons-api" class="jdl-previous-next-controls__arrow" />
           <span>${%Home}</span>
         </a>
@@ -41,7 +47,10 @@
     </div>
     <div>
       <j:if test="${attrs.nextPage != null}">
-        <a href="${rootURL}/design-library/${attrs.nextPage.urlName}" class="jenkins-button jenkins-button--tertiary jdl-next-button">
+        <a href="${rootURL}/design-library/${attrs.nextPage.urlName}" class="jenkins-button jenkins-button--tertiary jdl-next-button"
+           data-keyboard-shortcut-title="${%Next page}"
+           data-keyboard-shortcut-subtitle="${attrs.nextPage.displayName}"
+           data-keyboard-shortcut="right">
           <span>${attrs.nextPage.displayName}</span>
           <l:icon src="symbol-arrow-forward-outline plugin-ionicons-api" class="jdl-previous-next-controls__arrow" />
         </a>
