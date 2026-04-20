@@ -28,42 +28,50 @@ THE SOFTWARE.
     Page layout for Design Library
   </st:documentation>
 
-  <j:set var="instance" value="${it}" />
-  <j:set var="descriptor" value="${it.descriptor}" />
+  <l:view contentType="text/markdown">
+    # ${it.displayName}
 
-  <l:layout title="${it.displayName} - Design Library">
-    <p:prism configuration="${it.prismConfiguration}" />
+    ${it.description}
 
-    <st:adjunct includes="io.jenkins.plugins.designlibrary.styles" />
-    <st:adjunct includes="io.jenkins.plugins.designlibrary.sample" />
-    <st:adjunct includes="io.jenkins.plugins.designlibrary.preCode" />
-    <st:adjunct includes="io.jenkins.plugins.designlibrary.tabs" />
+    <d:invokeBody />
+  </l:view>
 
-    <st:include page="header" optional="true" />
+<!--  <j:set var="instance" value="${it}" />-->
+<!--  <j:set var="descriptor" value="${it.descriptor}" />-->
 
-    <l:side-panel>
-      <s:sidepanel />
-    </l:side-panel>
+<!--  <l:layout title="${it.displayName} - Design Library">-->
+<!--    <p:prism configuration="${it.prismConfiguration}" />-->
 
-    <l:main-panel>
-      <div class="app-settings-container">
-        <div class="app-settings-container__inner">
-          <l:app-bar title="${it.displayName}">
-            <j:if test="${it.since != null}">
-              <a href="https://www.jenkins.io/changelog/${it.since}" class="jenkins-button jdl-since-tag" target="_blank">
-                <l:icon src="symbol-information-circle-outline plugin-ionicons-api" />
-                Since ${it.since}
-              </a>
-            </j:if>
-          </l:app-bar>
+<!--    <st:adjunct includes="io.jenkins.plugins.designlibrary.styles" />-->
+<!--    <st:adjunct includes="io.jenkins.plugins.designlibrary.sample" />-->
+<!--    <st:adjunct includes="io.jenkins.plugins.designlibrary.preCode" />-->
+<!--    <st:adjunct includes="io.jenkins.plugins.designlibrary.tabs" />-->
 
-          <p class="jdl-subtitle">${it.description}</p>
+<!--    <st:include page="header" optional="true" />-->
 
-          <d:invokeBody/>
+<!--    <l:side-panel>-->
+<!--      <s:sidepanel />-->
+<!--    </l:side-panel>-->
 
-          <s:previous-next-controls previousPage="${it.previousPage}" nextPage="${it.nextPage}" />
-        </div>
-      </div>
-    </l:main-panel>
-  </l:layout>
+<!--    <l:main-panel>-->
+<!--      <div class="app-settings-container">-->
+<!--        <div class="app-settings-container__inner">-->
+<!--          <l:app-bar title="${it.displayName}">-->
+<!--            <j:if test="${it.since != null}">-->
+<!--              <a href="https://www.jenkins.io/changelog/${it.since}" class="jenkins-button jdl-since-tag" target="_blank">-->
+<!--                <l:icon src="symbol-information-circle-outline plugin-ionicons-api" />-->
+<!--                Since ${it.since}-->
+<!--              </a>-->
+<!--            </j:if>-->
+<!--          </l:app-bar>-->
+
+<!--          <p class="jdl-subtitle">${it.description}</p>-->
+
+<!--          <d:invokeBody/>-->
+
+<!--          <s:previous-next-controls previousPage="${it.previousPage}" nextPage="${it.nextPage}" />-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </l:main-panel>-->
+<!--  </l:layout>-->
 </j:jelly>
