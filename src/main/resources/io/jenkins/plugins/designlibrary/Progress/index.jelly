@@ -66,8 +66,8 @@
             <s:code file="progressiveRendering.jelly" />
           </s:code-pane>
           <s:code-pane title="JavaScript">
-          <p class="jdl-tab-pane__text">${%description.adjuncts}</p>
-          <s:code language="java" file="display.js" />
+            <s:paragraph>${%description.adjuncts}</s:paragraph>
+            <s:code language="java" file="display.js" />
           </s:code-pane>
         </s:code-panes>
       </s:group>
