@@ -6,19 +6,24 @@
     <st:attribute name="hideBorder" />
   </st:documentation>
 
-  ## ${attrs.title}
+  <j:choose>
+    <j:when test="${true}">
+      ## ${attrs.title}
 
-  ${attrs.description}
+      ${attrs.description}
 
-  <d:invokeBody />
-
-<!--  <section class="jdl-section ${hideBorder ? 'jdl-section&#45;&#45;no-border' : ''}">-->
-<!--    <j:if test="${attrs.title != null}">-->
-<!--      <h2 class="jdl-section__title">${attrs.title}</h2>-->
-<!--    </j:if>-->
-<!--    <j:if test="${attrs.description != null}">-->
-<!--      <div class="jdl-section__description"><j:out value="${attrs.description}" /></div>-->
-<!--    </j:if>-->
-<!--    <d:invokeBody />-->
-<!--  </section>-->
+      <d:invokeBody />
+    </j:when>
+    <j:otherwise>
+      <section class="jdl-section ${hideBorder ? 'jdl-section--no-border' : ''}">
+        <j:if test="${attrs.title != null}">
+          <h2 class="jdl-section__title">${attrs.title}</h2>
+        </j:if>
+        <j:if test="${attrs.description != null}">
+          <div class="jdl-section__description"><j:out value="${attrs.description}" /></div>
+        </j:if>
+        <d:invokeBody />
+      </section>
+    </j:otherwise>
+  </j:choose>
 </j:jelly>

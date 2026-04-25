@@ -1,7 +1,7 @@
 <?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:d="jelly:define" xmlns:st="jelly:stapler" xmlns:s="/lib/samples">
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define">
   <st:documentation>
-    Groups a <s:preview /> with a <s:code /> or <s:code-panes />
+    Displays a paragraph.
   </st:documentation>
 
   <j:choose>
@@ -9,7 +9,7 @@
       <d:invokeBody />
     </j:when>
     <j:otherwise>
-      <div class="jdl-component-group">
+      <div class="jdl-paragraph">
         <d:invokeBody />
       </div>
     </j:otherwise>
