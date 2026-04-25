@@ -6,7 +6,8 @@
 
   <j:choose>
     <j:when test="${true}">
-      <d:invokeBody />
+      <j:set var="body"><d:invokeBody /></j:set>
+      <j:out value="${it.markdownRenderer.group(body)}" />
     </j:when>
     <j:otherwise>
       <div class="jdl-component-group">

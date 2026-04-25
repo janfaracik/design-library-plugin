@@ -7,8 +7,8 @@
 
   <j:choose>
     <j:when test="${true}">
-<d:invokeBody />
-
+      <j:set var="body"><d:invokeBody /></j:set>
+      <j:out value="${it.markdownRenderer.list(body)}" />
     </j:when>
     <j:otherwise>
       <j:choose>

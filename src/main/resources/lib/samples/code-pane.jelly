@@ -6,8 +6,16 @@
     </st:attribute>
   </st:documentation>
 
-  <div class="jdl-tab-pane">
-    <p class="jdl-tab-pane__title">${attrs.title}</p>
-    <d:invokeBody />
-  </div>
+  <j:choose>
+    <j:when test="${true}">
+      <j:set var="body"><d:invokeBody /></j:set>
+      <j:out value="${it.markdownRenderer.codePane(attrs.title, body)}" />
+    </j:when>
+    <j:otherwise>
+      <div class="jdl-tab-pane">
+        <p class="jdl-tab-pane__title">${attrs.title}</p>
+        <d:invokeBody />
+      </div>
+    </j:otherwise>
+  </j:choose>
 </j:jelly>

@@ -30,12 +30,9 @@ THE SOFTWARE.
 
   <j:choose>
     <j:when test="${true}">
+      <j:set var="body"><d:invokeBody /></j:set>
       <l:view contentType="text/markdown">
-        # ${it.displayName}
-
-        > ${it.description}
-
-        <d:invokeBody />
+        <j:out value="${it.markdownRenderer.layout(it.displayName, it.description, body)}" />
       </l:view>
     </j:when>
     <j:otherwise>

@@ -8,17 +8,8 @@
 
   <j:choose>
     <j:when test="${true}">
-      <j:if test="${attrs.title != null}">
-        ## ${attrs.title}
-
-      </j:if>
-
-      <j:if test="${attrs.description != null}">
-        > ${attrs.description}
-
-      </j:if>
-
-      <d:invokeBody />
+      <j:set var="body"><d:invokeBody /></j:set>
+      <j:out value="${it.markdownRenderer.section(attrs.title, attrs.description, body)}" />
     </j:when>
     <j:otherwise>
       <section class="jdl-section ${hideBorder ? 'jdl-section--no-border' : ''}">

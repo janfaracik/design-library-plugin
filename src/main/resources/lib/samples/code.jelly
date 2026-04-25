@@ -25,9 +25,7 @@
 
   <j:choose>
     <j:when test="${true}">
-      ```${language}
-      <j:out value="${code}" />
-      ```
+      <j:out value="${it.markdownRenderer.code(language, code)}" />
     </j:when>
     <j:otherwise>
       <div class="jdl-component-code">
