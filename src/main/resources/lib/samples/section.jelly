@@ -10,10 +10,12 @@
     <j:when test="${true}">
       <j:if test="${attrs.title != null}">
         ## ${attrs.title}
+
       </j:if>
 
       <j:if test="${attrs.description != null}">
-        - ${attrs.description}
+        > ${attrs.description}
+
       </j:if>
 
       <d:invokeBody />
