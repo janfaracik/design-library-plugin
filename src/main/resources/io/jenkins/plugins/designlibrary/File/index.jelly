@@ -33,7 +33,7 @@ THE SOFTWARE.
         <s:code file="file.jelly" />
       </s:group>
 
-      <p class="jdl-paragraph">${%parameters}</p>
+      <s:paragraph>${%parameters}</s:paragraph>
       <ul class="jdl-list">
         <li>field - ${%parameters.field}</li>
         <li>clazz - ${%parameters.clazz}</li>

@@ -48,7 +48,7 @@
           </s:code-pane>
         </s:code-panes>
       </s:group>
-      <p class="jdl-paragraph">${%modals}</p>
+      <s:paragraph>${%modals}</s:paragraph>
     </s:section>
 
     <s:section title="${%Alerts}">
@@ -68,7 +68,7 @@
         </s:preview>
         <s:code language="java" file="alert.js" callback="showAlert"/>
       </s:group>
-      <p class="jdl-paragraph">${%alerts}</p>
+      <s:paragraph>${%alerts}</s:paragraph>
     </s:section>
 
     <s:section title="${%Confirmations}">
@@ -87,13 +87,13 @@
         </s:preview>
         <s:code language="java" file="confirm.js" code="showConfirm()" callback="showConfirm"/>
       </s:group>
-      <p class="jdl-paragraph">${%confirmations}</p>
+      <s:paragraph>${%confirmations}</s:paragraph>
     </s:section>
 
     <s:section title="${%Customizing the appearance and behaviour}">
-      <div class="jdl-paragraph">All dialogs take a second optional parameter with options that allow to change certain
+      <s:paragraph>All dialogs take a second optional parameter with options that allow to change certain
         aspects.
-      </div>
+      </s:paragraph>
       <ul class="jdl-list">
         <li><code>message</code>: Adds a message to the dialog.
         </li>
@@ -132,7 +132,7 @@
     </s:section>
 
     <s:section title="${%OK Button texts}">
-      <div class="jdl-paragraph">${%buttontexts}</div>
+      <s:paragraph>${%buttontexts}</s:paragraph>
       <ul class="jdl-list">
         <li><code>ok</code>: OK
         </li>

@@ -56,7 +56,7 @@
           </form>
           <j:if test="${number != null}">
             <st:adjunct includes="io.jenkins.plugins.designlibrary.Progress.progressive-rendering"/>
-            <p class="jdl-paragraph">Factors of ${number}:</p>
+            <s:paragraph>Factors of ${number}:</s:paragraph>
             <l:progressiveRendering handler="${it.factor(number)}" callback="display" tooltip="Factoring…"/>
             <ul class="jdl-list" id="factors"/>
           </j:if>

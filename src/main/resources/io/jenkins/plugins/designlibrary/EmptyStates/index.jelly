@@ -33,7 +33,7 @@ THE SOFTWARE.
         <s:code file="empty-states.jelly" />
       </s:group>
 
-      <p class="jdl-paragraph">${%parameters}</p>
+      <s:paragraph>${%parameters}</s:paragraph>
       <ul class="jdl-list">
         <li>title - ${%parameters.title}</li>
         <li>icon - ${%parameters.icon}</li>

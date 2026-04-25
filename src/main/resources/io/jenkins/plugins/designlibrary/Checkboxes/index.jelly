@@ -33,7 +33,7 @@ THE SOFTWARE.
         <s:code file="checkbox.jelly" />
       </s:group>
 
-      <p class="jdl-paragraph">${%checkbox.parameters}</p>
+      <s:paragraph>${%checkbox.parameters}</s:paragraph>
       <ul class="jdl-list">
         <li>id (optional) - ${%checkbox.parameters.id}</li>
         <li>default (optional) - ${%checkbox.parameters.default}</li>
@@ -41,7 +41,7 @@ THE SOFTWARE.
         <li>title - ${%checkbox.parameters.title}</li>
       </ul>
 
-      <p class="jdl-paragraph">${%checkbox.additionalParameters}</p>
+      <s:paragraph>${%checkbox.additionalParameters}</s:paragraph>
     </s:section>
   </s:layout>
 </j:jelly>
