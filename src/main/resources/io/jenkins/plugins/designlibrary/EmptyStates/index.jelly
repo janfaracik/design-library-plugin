@@ -34,10 +34,10 @@ THE SOFTWARE.
       </s:group>
 
       <s:paragraph>${%parameters}</s:paragraph>
-      <ul class="jdl-list">
-        <li>title - ${%parameters.title}</li>
-        <li>icon - ${%parameters.icon}</li>
-      </ul>
+      <s:list>
+        <s:list-item>title - ${%parameters.title}</s:list-item>
+        <s:list-item>icon - ${%parameters.icon}</s:list-item>
+      </s:list>
     </s:section>
 
     <s:section title="${%childSectionTitle}" description="${%descriptionChildContent}">

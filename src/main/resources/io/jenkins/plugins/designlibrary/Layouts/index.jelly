@@ -81,17 +81,17 @@
           You should only use a badge if the information is useful to the user, for example:
         </s:paragraph>
 
-        <ul class="jdl-list">
-          <li>
+        <s:list>
+          <s:list-item>
             Updates count on the 'Plugins' page
-          </li>
-          <li>
+          </s:list-item>
+          <s:list-item>
             Passing/failed tests count
-          </li>
-          <li>
+          </s:list-item>
+          <s:list-item>
             Unread notifications
-          </li>
-        </ul>
+          </s:list-item>
+        </s:list>
       </s:section>
     </l:tabPane>
 

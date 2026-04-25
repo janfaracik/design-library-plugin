@@ -8,9 +8,13 @@
 
   <j:choose>
     <j:when test="${true}">
-      ## ${attrs.title}
+      <j:if test="${attrs.title != null}">
+        ## ${attrs.title}
+      </j:if>
 
-      ${attrs.description}
+      <j:if test="${attrs.description != null}">
+        - ${attrs.description}
+      </j:if>
 
       <d:invokeBody />
     </j:when>

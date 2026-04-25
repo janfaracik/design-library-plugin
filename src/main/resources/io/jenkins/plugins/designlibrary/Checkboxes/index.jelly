@@ -34,12 +34,12 @@ THE SOFTWARE.
       </s:group>
 
       <s:paragraph>${%checkbox.parameters}</s:paragraph>
-      <ul class="jdl-list">
-        <li>id (optional) - ${%checkbox.parameters.id}</li>
-        <li>default (optional) - ${%checkbox.parameters.default}</li>
-        <li>field - ${%checkbox.parameters.field}</li>
-        <li>title - ${%checkbox.parameters.title}</li>
-      </ul>
+      <s:list>
+        <s:list-item>id (optional) - ${%checkbox.parameters.id}</s:list-item>
+        <s:list-item>default (optional) - ${%checkbox.parameters.default}</s:list-item>
+        <s:list-item>field - ${%checkbox.parameters.field}</s:list-item>
+        <s:list-item>title - ${%checkbox.parameters.title}</s:list-item>
+      </s:list>
 
       <s:paragraph>${%checkbox.additionalParameters}</s:paragraph>
     </s:section>

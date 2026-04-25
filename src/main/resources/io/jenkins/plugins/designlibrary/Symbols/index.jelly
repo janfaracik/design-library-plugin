@@ -151,18 +151,18 @@
       <s:code file="symbol-plugin.jelly" />
 
       <s:paragraph>${%customSymbols.information}</s:paragraph>
-      <ul class="jdl-list">
-        <li>symbolName - ${%customSymbols.symbolName}</li>
-        <li>yourArtifactId - ${%customSymbols.artifactId}</li>
-      </ul>
+      <s:list>
+        <s:list-item>symbolName - ${%customSymbols.symbolName}</s:list-item>
+        <s:list-item>yourArtifactId - ${%customSymbols.artifactId}</s:list-item>
+      </s:list>
 
       <s:paragraph>${%customSymbols.artifactId.description}</s:paragraph>
 
       <s:paragraph>${%customSymbols.theme}</s:paragraph>
-      <ul class="jdl-list">
-        <li>stroke="currentColor"</li>
-        <li>fill="currentColor"</li>
-      </ul>
+      <s:list>
+        <s:list-item>stroke="currentColor"</s:list-item>
+        <s:list-item>fill="currentColor"</s:list-item>
+      </s:list>
       <s:paragraph>${%customSymbols.theme.clarification}</s:paragraph>
     </s:section>
   </s:layout>

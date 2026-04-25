@@ -58,7 +58,7 @@
             <st:adjunct includes="io.jenkins.plugins.designlibrary.Progress.progressive-rendering"/>
             <s:paragraph>Factors of ${number}:</s:paragraph>
             <l:progressiveRendering handler="${it.factor(number)}" callback="display" tooltip="Factoring…"/>
-            <ul class="jdl-list" id="factors"/>
+            <s:list id="factors"/>
           </j:if>
         </s:preview>
         <s:code-panes>
@@ -74,4 +74,3 @@
     </s:section>
   </s:layout>
 </j:jelly>
-
