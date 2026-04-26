@@ -7,8 +7,8 @@
     "dev": "sass --watch src/main/resources/scss/styles.scss src/main/resources/io/jenkins/plugins/designlibrary/styles.css && postcss src/main/resources/io/jenkins/plugins/designlibrary/styles.css --replace --use autoprefixer",
     "mvntest": "npm run test",
     "test": "exit 0",
-    "lint": "prettier --check .",
-    "lint:fix": "prettier --write ."
+    "lint": "biome check .",
+    "lint:fix": "biome check --write ."
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,9 @@
   },
   "homepage": "https://github.com/jenkinsci/design-library-plugin#readme",
   "devDependencies": {
+    "@biomejs/biome": "2.4.13",
     "autoprefixer": "10.4.27",
     "postcss-cli": "11.0.1",
-    "sass": "1.87.0",
-    "prettier": "3.5.3"
+    "sass": "1.87.0"
   }
 }
