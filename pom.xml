@@ -56,11 +56,12 @@ THE SOFTWARE.
   </scm>
 
   <properties>
+    <useBeta>true</useBeta>
     <changelist>999999-SNAPSHOT</changelist>
     <gitHubRepo>jenkinsci/design-library-plugin</gitHubRepo>
     <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
     <jenkins.baseline>2.541</jenkins.baseline>
-    <jenkins.version>2.592-SNAPSHOT</jenkins.version>
+    <jenkins.version>2.593-SNAPSHOT</jenkins.version>
     <node.version>26.13.1</node.version>
     <npm.version>12.2.2</npm.version>
     <spotless.check.skip>false</spotless.check.skip>

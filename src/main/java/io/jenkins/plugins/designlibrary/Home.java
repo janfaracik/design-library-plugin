@@ -1,14 +1,22 @@
 package io.jenkins.plugins.designlibrary;
 
+import edu.umd.cs.findbugs.annotations.NonNull;
 import hudson.Extension;
 import hudson.PluginWrapper;
 import hudson.model.RootAction;
+import hudson.search.FixedSet;
+import hudson.search.Search;
+import hudson.search.SearchIndex;
+import hudson.search.SearchItem;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 import jenkins.model.Jenkins;
+import jenkins.search.SearchGroup;
+import jenkins.search.SearchScope;
 import org.kohsuke.accmod.Restricted;
 import org.kohsuke.accmod.restrictions.NoExternalUse;
 import org.kohsuke.stapler.StaplerRequest2;
@@ -20,7 +28,7 @@ import org.kohsuke.stapler.StaplerResponse2;
  * @author Kohsuke Kawaguchi
  */
 @Extension
-public class Home implements RootAction {
+public class Home implements RootAction, SearchScope {
 
     public String getIconFileName() {
         return "symbol-design-library plugin-design-library";
@@ -37,6 +45,71 @@ public class Home implements RootAction {
     @Override
     public boolean isPrimaryAction() {
         return true;
+    }
+
+    @Override
+    public String getSearchName() {
+        return getDisplayName();
+    }
+
+    @Override
+    public String getSearchUrl() {
+        return getUrlName();
+    }
+
+    @Override
+    public String getSearchIcon() {
+        return getIconFileName();
+    }
+
+    @Override
+    public Search getSearch() {
+        return new Search();
+    }
+
+    @Override
+    public SearchIndex getSearchIndex() {
+        return SearchIndex.EMPTY;
+    }
+
+    @NonNull
+    @Override
+    public SearchIndex getScopedSearchIndex() {
+        List<SearchItem> items = new ArrayList<>();
+        getGrouped().forEach((category, samples) -> {
+            SearchGroup group = category::getDisplayName;
+            for (UISample sample : samples) {
+                items.add(new SampleSearchItem(sample, group));
+            }
+        });
+        return new FixedSet(items);
+    }
+
+    private record SampleSearchItem(UISample sample, SearchGroup group) implements SearchItem {
+        @Override
+        public String getSearchName() {
+            return sample.getDisplayName();
+        }
+
+        @Override
+        public String getSearchUrl() {
+            return sample.getUrlName();
+        }
+
+        @Override
+        public String getSearchIcon() {
+            return sample.getIconFileName();
+        }
+
+        @Override
+        public SearchGroup getSearchGroup() {
+            return group;
+        }
+
+        @Override
+        public SearchIndex getSearchIndex() {
+            return SearchIndex.EMPTY;
+        }
     }
 
     public List<UISample> getAll() {
