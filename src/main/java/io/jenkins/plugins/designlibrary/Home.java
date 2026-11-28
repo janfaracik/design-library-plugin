@@ -5,7 +5,6 @@ import hudson.Extension;
 import hudson.PluginWrapper;
 import hudson.model.RootAction;
 import hudson.search.FixedSet;
-import hudson.search.Search;
 import hudson.search.SearchIndex;
 import hudson.search.SearchItem;
 import java.io.IOException;
@@ -62,16 +61,6 @@ public class Home implements RootAction, SearchScope {
         return getIconFileName();
     }
 
-    @Override
-    public Search getSearch() {
-        return new Search();
-    }
-
-    @Override
-    public SearchIndex getSearchIndex() {
-        return SearchIndex.EMPTY;
-    }
-
     @NonNull
     @Override
     public SearchIndex getScopedSearchIndex() {
@@ -79,37 +68,10 @@ public class Home implements RootAction, SearchScope {
         getGrouped().forEach((category, samples) -> {
             SearchGroup group = category::getDisplayName;
             for (UISample sample : samples) {
-                items.add(new SampleSearchItem(sample, group));
+                items.add(new SampleSearchItem(sample, sample.getUrlName(), group));
             }
         });
         return new FixedSet(items);
-    }
-
-    private record SampleSearchItem(UISample sample, SearchGroup group) implements SearchItem {
-        @Override
-        public String getSearchName() {
-            return sample.getDisplayName();
-        }
-
-        @Override
-        public String getSearchUrl() {
-            return sample.getUrlName();
-        }
-
-        @Override
-        public String getSearchIcon() {
-            return sample.getIconFileName();
-        }
-
-        @Override
-        public SearchGroup getSearchGroup() {
-            return group;
-        }
-
-        @Override
-        public SearchIndex getSearchIndex() {
-            return SearchIndex.EMPTY;
-        }
     }
 
     public List<UISample> getAll() {
